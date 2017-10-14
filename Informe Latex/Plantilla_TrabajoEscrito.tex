@@ -1,0 +1,625 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Plantilla: para la realizaci�n de informes.
+%Curso:     Simulaci�n estad�stica.
+%Profesor:  Johann A. Ospina.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Establece el tipo de documento (art�culo), tama�o de letra (10pt) a una columna.
+\documentclass[letterpaper,12pt,onecolumn,titlepage]{article} 
+ 
+ 
+% Cargar paquetes
+\usepackage{verbatim}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{ucs}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fontenc}
+\usepackage{graphicx}
+\usepackage{anysize}
+\usepackage{fancyhdr}
+\usepackage[comma,authoryear]{natbib}
+\usepackage{url} %paquete para definir url
+\usepackage{hyperref}  %hipervinculos
+
+%Estilo de la p�gina
+\pagestyle{fancy}
+
+%Establecer el margen
+\marginsize{2cm}{2cm}{1cm}{1cm}
+\setlength{\headheight}{13.1pt}
+
+
+% Portada
+\title{
+    \textbf{Laboratorio N.1}\
+    ~\\{Introduccion a Los Metodos Estadisticos}   
+    ~\\{Estimadores}}
+\author{
+    {Diana Carolina Arias Sinisterra Cod. 1528008}
+ ~\\{Kevin Steven Garcia Chica Cod. 1533173}
+ ~\\{Cesar Andres Saavedra Vanegas Cod. 1628466}}
+
+\date{
+     \textbf{Universidad Del Valle}\   
+    ~\\{Facultad De Ingenieria}
+    ~\\{Estadistica}
+    ~\\{Octubre}
+    ~\\{2017}}
+ 
+ 
+ 
+\decimalpoint %Poner punto decimal
+ 
+\begin{document}
+ 
+% Se aplica el formato a las p�ginas. Se despliegan: portada e �ndices de materias, figuras y tablas
+\renewcommand{\listtablename}{}
+\renewcommand{\tablename}{Tabla}
+\maketitle
+\setcounter{page}{2}
+\tableofcontents{}
+%\thispagestyle{empty}
+%\newpage
+\listoffigures{}
+\listoftables
+
+\thispagestyle{empty}
+
+\newpage
+\fancyhead{}
+\fancyfoot{}
+ 
+% Encabezado y pie de pagina
+\lhead{Introduccion a los Metodos Estadisticos}
+\lfoot{Universidad Del Valle}
+\rfoot{\thepage}
+
+% Estilo de la bibliograf�a
+\bibliographystyle{apalike}
+ 
+% Desarrollo de los contenidos del documento
+\section{Situaci\'{o}n 1}
+\subsection{Estimadores}
+~\\ Los estimadores propuestos son:
+~\ $$\hat{\theta_1}=2\bar{X}-1$$
+~\ $$\hat{\theta_2}=X_{Max}+X_{Min}-1$$
+~\ $$\hat{\theta_3}=X_{Max}$$
+~\ $$\hat{\theta_4}=Me(X) $$
+~\\ Para evaluar los estimadores anteriores obtuvimos las siguientes cuatro gr\'{a}ficas:
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/A.png}
+        \caption{Gr\'{a}fica del resultado de la estimaci\'{o}n del par\'{a}metro real $\theta=1200$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ Como podemos observar en la gr\'{a}fica,los estimadores $\hat{\theta_1}$ y $\hat{\theta_2}$ son los que mas se acercan al par\'{a}metro real $\theta=1200$  con cualquier tama\~{n}o de muestra, aunque el estimador $\hat{\theta_3}$ tambi\'{e}n se acerca pero despu\'{e}s de tama\~{n}o de muestra $n=100$, lo cual nos dice que son mejores los dos anteriores. El estimador $\hat{\theta_4}$ esta muy lejos del par\'{a}metro real, a simple vista podr\'{i}amos decir que ese estimador servir\'{i}a no para estimar $\theta$ en si, si no, para estimar la media de la distribuci\'{o}n en general que es aproximadamente 600.
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/S.png}
+        \caption{Gr\'{a}fica del sesgo de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta gr\'{a}fica vemos que al igual que en la anterior, los estimadores $\hat{\theta_1}$ y $\hat{\theta_2}$ son los mejores, ya que tienen un sesgo casi igual a 0 para todos los tama\~{n}os de muestra, aunque vemos tambi\'{e}n que el sesgo del estimador $\hat{\theta_3}$ tambi\'{e}n tiende a 0 a medida que se aumenta los tama\~{n}os de muestra. El estimador $\hat{\theta_4}$ es el menos acertado ya que su sesgo es muy elevado. En general, bas\'{a}ndonos en esta gr\'{a}fica, los mejores estimadores hasta ahora son $\hat{\theta_1}$ y $\hat{\theta_2}$
+\pagebreak \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/V.png}
+        \caption{Gr\'{a}fica de la varianza de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta gr\'{a}fica podemos observar que los estimadores $\hat{\theta_2}$ y $\hat{\theta_3}$ tienen menor varianza que los otros dos, pero notemos, que la diferencia de varianzas entre $\hat{\theta_2}$ y $\hat{\theta_3}$ es casi la mitad a favor de $\hat{\theta_3}$ en los tama\~{n}os de muestra mas peque\~{n}os, indicandonos esto, que el estimador de menor varianza es efectivamente $\hat{\theta_3}$.
+\pagebreak \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/ECM.png}
+        \caption{Gr\'{a}fica del ECM de los distintos estimadores variando los tama\~{n}os de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En la gr\'{a}fica anterior, notamos que el menor Error cuadr\'{a}tico medio lo presentan los estimadores $\hat{\theta_2}$ y $\hat{\theta_3}$, con casi el mismo en todos los tama\~{n}os de muestra, por esa raz\'{o}n no logramos ver la linea y los puntos que representan el estimador $\hat{\theta_2}$, pero en el tama\~{n}o de muestra n=5 se alcanza a observar una peque\~{n}a porci\'{o}n del punto rojo que representa el estimador $\hat{\theta_2}$, obstruido por el punto verde que representa el estimador $\hat{\theta_3}$, lo que nos asegura que no hay diferencias significativas entre estos estimadores con respecto al ECM.Entonces, para decidir cual de los dos estimadores es mejor, debemos ver las 4 gr\'{a}ficas en conjunto, ya que el ECM no me deja claro esto, por ser tan parecido en ambos.
+
+~\\ En conclusi\'{o}n, tomando en cuenta las 4 gr\'{a}ficas, podr\'{i}amos decir que para tama\~{n}os de muestra menor a 100, $\hat{\theta_2}$ es el mejor estimador para $\theta=1200$ ya que su sesgo es menor que el de $\hat{\theta_3}$, su estimaci\'{o}n es mas cercana al valor real del par\'{a}metro y ademas su varianza no es muy alta. 
+
+
+\pagebreak \section{Situaci\'{o}n 2}
+\subsection{Punto A.}
+~\\\textbf{Si $\hat{\theta_1}$ y $\hat{\theta_2}$ son dos estimadores insesgados tales que:
+~\\$$\hat{\theta_3}=a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}$$}
+~\\ Aplico Esperanza a ambos lados 
+~\\ $E[\hat{\theta_3}] = E[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
+~\\ $E[\hat{\theta_3}] = E[a{\hat{\theta_1}}]+E[(1-a){\hat{\theta_2}}]$
+~\\ $E[\hat{\theta_3}] = aE[{\hat{\theta_1}}]+(1-a)E[{\hat{\theta_2}}]$ \textbf{Con $\hat{\theta_1}$ y $\hat{\theta_2}$ estimadores insesgados}\
+~\\ $E[\hat{\theta_3}] = a{\theta} + (1-a){\theta}$
+~\\ $E[\hat{\theta_3}] = a{\theta} + {\theta} - a{\theta}$
+~\\ $$E[\hat{\theta_3}]={\theta}$$
+
+~\\\textbf{$\therefore \hat{\theta_3}$ Es un estimador insesgado.} 
+ 
+
+
+\subsection{Punto B.} 
+
+~\\\textbf{ El coeficiente de variaci\'{o}n de $\hat{\theta_3}$ es}
+~\\
+~\\ $$CV[\hat{\theta_3}]=\frac{\sqrt{Var[\hat{\theta_3}]}}{E[\hat{\theta_3}]}$$
+~\\ Hallamos la $Var[\hat{\theta_3}]$
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]+2Cov[a{\hat{\theta_1}},(1-a){\hat{\theta_2}}]$,    ya que no sabemos si ${\hat{\theta_1}}$ y ${\hat{\theta_2}}$ son independientes
+~\\ Entonces, distribuyendo la Varianza y por las propiedades de Covarianza:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]+2a(1-a) Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]+(2a-2a^2)Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
+~\\
+~\\\textbf{Como $Var[{\hat{\theta_1}}]=\sigma_1^2$ y $Var[{\hat{\theta_2}}]=\sigma_2^2$ entonces}
+
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-a)^2[\sigma_2^2]+(2a-2a^2)Cov[{\hat{\theta_1}},{\hat{\theta_2}}]$
+~\\ Sabemos que $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]= E[{\hat{\theta_1}}{\hat{\theta_2}}]- E[{\hat{\theta_1}}]*E[{\hat{\theta_2}}]$, entonces:
+~\\ Como $E[{\hat{\theta_1}}]={\theta}$ y $E[{\hat{\theta_2}}]={\theta}$ tenemos:
+~\\ $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]=E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2}$, por tanto:
+~\\ $Var[\hat{\theta_3}]=a^2[\sigma_1^2]+(1-2a+a^2)[\sigma_2^2]+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})$
+~\\ Como sabemos que $E[\hat{\theta_3}]={\theta}$
+
+~\\$\therefore$ \textbf{El coeficiente de variaci\'{o}n para $\hat{\theta_3}$ es:}  
+$$CV[\hat{\theta_3}]=\frac{\sqrt{a^2\sigma_1^2+(1-a)^2\sigma_2^2+(2a-2a^2)(E[{\hat{\theta_1}}{\hat{\theta_2}}]-{\theta^2})}}{{\theta}}$$
+
+\subsection{Punto C.} 
+~\\ Como en este punto sabemos que $\hat{\theta_1}$ y $\hat{\theta_2}$ son independientes, entonces la $Cov[{\hat{\theta_1}},{\hat{\theta_2}}]=0$ y por tanto:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}+(1-a){\hat{\theta_2}}]$
+~\\ Distribuyendo la varianza y aplicando sus propiedades, nos queda:
+~\\ $Var[\hat{\theta_3}]=Var[a{\hat{\theta_1}}]+Var[(1-a){\hat{\theta_2}}]$ 
+~\\ $Var[\hat{\theta_3}]=a^2Var[{\hat{\theta_1}}]+(1-a)^2Var[{\hat{\theta_2}}]$
+~\\ $Var[\hat{\theta_3}]=a^2\sigma_1^2+(1-a)^2\sigma_2^2$ 
+~\\ Note que $Var[\hat{\theta_3}]$ se convierte en una funci\'{o}n que depende de a, ya que, $\sigma_1^2$ y $\sigma_2^2$ son conocidas, entonces, debemos encontrar a, que haga m\'{i}nima dicha funci\'{o}n, en otras palabras, todo se reduce a encontrar el m\'{i}nimo de la funci\'{o}n. Para ello procedemos de la siguiente manera:
+~\\ 1. Encontramos la primera derivada de la funci\'{o}n con respecto a la variable a:
+~\\ $$f'(a)=2a\sigma_1^2 - 2(1-a)\sigma_2^2$$
+~\\ 2. Igualamos el resultado de la primera derivada a 0 y despejamos la variable que nos interesa obtener, en este caso, despejamos a:
+$$2a\sigma_1^2 - 2(1-a)\sigma_2^2=0$$
+$$2a\sigma_1^2 - (2-2a)\sigma_2^2=0$$
+$$2a\sigma_1^2 - 2\sigma_2^2 + 2a\sigma_2^2=0$$
+$$2a\sigma_1^2  + 2a\sigma_2^2= 2\sigma_2^2$$
+$$a(2\sigma_1^2+2\sigma_2^2)=2\sigma_2^2$$
+$$a=\frac{2\sigma_2^2}{2\sigma_1^2+2\sigma_2^2}$$
+~\\$\therefore${$a=\frac{\sigma_2^2}{\sigma_1^2+\sigma_2^2}$}
+~\\ 3. Ahora, debemos encontrar la segunda derivada y ver si es positiva o negativa para saber si encontramos un m\'{i}nimo o un m\'{a}ximo:
+~\\$$f^{\prime\prime}(a)=2\sigma_1^2+2\sigma_2^2 > 0$$
+~\\ Como nos dio que la segunda derivada parcial es siempre positiva, concluimos que el a hallado anteriormente es un m\'{i}nimo. Por lo tanto, para hacer que la $Var[\hat{\theta_3}]$ sea m\'{i}nima, debemos escoger a como $a=\frac{\sigma_2^2}{\sigma_1^2+\sigma_2^2}$.
+
+\section{Situaci\'{o}n 3}
+\subsection{Punto A.}
+
+Sea $X$ una distribuci\'{o}n Poisson$(\lambda)$ con, $n=30$ y $E[x]=(\lambda)$
+
+$$\ M'_1 = \frac{1}{30} \sum_{i=1}^{30}x_{i}$$
+$$\mu'_1 = \lambda$$
+
+$\ M'_1 = \frac{1}{30} \sum_{i=1}^{30}x_{i} = \lambda = \mu'_1$
+
+$\therefore \hat{\lambda}= \frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$
+ 
+~\\Ahora es necesario probar si es insesgado: 
+
+~\\$E[\hat{\lambda}]=E[\frac{1}{30} \sum_{i=1}^{30}x_{i}]$
+~\\$E[\hat{\lambda}]=\frac{1}{30} E[\sum_{i=1}^{30}{\lambda}_{i}]$
+~\\$E[\hat{\lambda}]=\frac{1}{30}30\lambda$
+~\\$E[\hat{\lambda}]=\lambda$
+
+~\\$\therefore$ \textbf{Un estimador insesgado para} $\lambda$ \textbf{es} $\hat{\lambda}= \frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$
+
+\subsection{Punto B.}
+
+Sea $C=3X+X^2$
+
+~\\$E[C]=E[3X+X^2]$
+~\\$E[C]=E[3X] + E[X^2]$
+~\\$E[C]=3E[X] + E[X^2]$
+
+~\\ Sabiendo que:
+ 
+$V[X]=E[X^2] - E^2[X]$
+
+
+~\\ Entonces: 
+
+$E^2[X] = V[X] + E[X^2]$
+
+~\\$\therefore E^2[X] = \lambda + (\lambda)^2$
+
+~\\ Reemplazando $E^2[X]$ en:\ 
+
+$E[C]=3\lambda + E[X^2]$
+
+~\\Obtenemos que: 
+$E[C]=3\lambda + \lambda + (\lambda)^2$
+~\\$\therefore E[C] = 4\lambda + (\lambda)^2$
+
+\subsection{Punto C.}
+~\\ Ahora debemos sugerir un estimador insesgado para $E[C] = 4\lambda + {\lambda}^2$
+~\\ Como $\hat{\lambda}= \frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$ es un estimador insesgado para $\lambda$ , creemos que $4\hat{\lambda}+\hat{\lambda}^2$ es insesgado para $E[C] = 4\lambda + {\lambda}^2$
+~\\ Para ver si eso es correcto, encontraremos la esperanza del estimador propuesto, y con respecto a ese resultado, transformaremos nuestro estimador para que efectivamente nos de insesgado para $E[C] = 4\lambda + {\lambda}^2$, entonces:
+~\\ $$E[4\hat{\lambda}+\hat{\lambda}^2]=E[4\hat{\lambda}]+E[\hat{\lambda}^2]$$
+ $$=4E[\hat{\lambda}]+E[\hat{\lambda}^2]$$
+~\ reemplazando el valor del estimador en $\hat{\lambda}$, nos queda:
+$$=4E[\frac{1}{30}\sum_{i=1}^{30}x_{i}]+E[ \frac{1}{30} \sum_{i=1}^{30}x_{i}]^2$$
+$$=\frac{4}{30}E[\sum_{i=1}^{30}x_{i}]+\frac{1}{900}E[\sum_{i=1}^{30}x_{i}]^2$$ 
+Denotemos $T=\sum_{i=1}^{30}x_{i}$ . Sabemos que xi tiene distribuci\'{o}n Poisson($\lambda$), por tanto T tendr\'{a} distribuci\'{o}n Poisson($30\lambda$). Entonces, sustituyendo el T en la ecuaci\'{o}n, tendr\'{i}amos:
+$$=\frac{4}{30}E[T]+\frac{1}{900}E[T]^2$$
+Ahora, si T se distribuye Poisson($30\lambda$), entonces $E[T]=30\lambda$ y $V[T]=30\lambda$.
+Por propiedades tenemos que $V[T]=E[T^2]-E^2[T]$, entonces, sustituyendo y resolviendo, $E[T^2]=30\lambda-900{\lambda}^2$
+Sustituyendo todo en la ecuaci\'{o}n, tenemos lo siguiente:
+$$=\frac{4}{30}(30\lambda)+\frac{1}{900}(30\lambda-900{\lambda}^2)$$ 
+$$=4\lambda+\frac{1}{30}(\lambda-30{\lambda}^2)$$
+$$=4\lambda+\frac{1}{30}\lambda-{\lambda}^2$$
+Entonces, debemos modificar nuestro estimador inicial, para que efectivamente su esperanza nos de $4\lambda + {\lambda}^2$
+~\\ Note que para obtener esa esperanza solo debemos restar $\frac{1}{30}\lambda$ y cambiarle el signo a $-{\lambda}^2$ al resultado de la esperanza
+~\\ Para lograr eso, propusimos el estimador $4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}$
+~\\ Ahora veremos si este nuevo estimador propuesto si es insesgado para $E[C] = 4\lambda + {\lambda}^2$
+$$E[4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}]=E[4\hat{\lambda}]-E[\hat{\lambda}^2]+E[\frac{1}{30}\hat{\lambda}]$$
+$$=4E[\hat{\lambda}]-E[\hat{\lambda}^2]+\frac{1}{30}E[\hat{\lambda}]$$
+Haciendo la misma sustituci\'{o}n que antes, nos queda:
+$$=\frac{4}{30}E[T]-\frac{1}{900}E[T^2]+\frac{1}{900}E[T]$$
+$$=\frac{4}{30}(30\lambda)-\frac{1}{900}(30\lambda-900{\lambda}^2)+\frac{1}{900}(30\lambda)$$
+$$=4\lambda-\frac{1}{30}(\lambda-30{\lambda}^2)+\frac{1}{30}\lambda$$
+$$=4\lambda-\frac{1}{30}\lambda+{\lambda}^2+\frac{1}{30}\lambda$$
+$$=4\lambda+{\lambda}^2$$
+~\\$\therefore$ \textbf{Un estimador insesgado para} $E[C]=4\lambda+{\lambda}^2$ \textbf{es} $4\hat{\lambda}-\hat{\lambda}^2+\frac{1}{30}\hat{\lambda}$ \textbf{donde:} $\hat{\lambda}=\frac{1}{30} \sum_{i=1}^{30}x_{i} = \overline{X}$
+
+\pagebreak\section{Situaci\'{o}n 4}
+\subsection{Punto A.}
+~\\Se tiene una poblaci\'{o}n que se encuentra definida por una variable aleatoria X con distribuci\'{o}n Exponencial:
+
+$$\ f(x)=5e^{-5x} ; x>0$$
+
+~\\ Para la cual se generaron 1000 muestras aleatorias de tama\~{n}o n, para la cual se construyeron histogramas con los valores de las medias y se les sobrepuso la curva normal de par\'{a}metros $\mu$ y $\frac{\sigma}{\sqrt{n}}$. 
+
+~\\ Esta simulaci\'{o}n se realizo por medio del software R y para n con tama\~{n}o de muestra de 5, 10, 20, 30, 50, 100.
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=15cm]{figuras/4.jpeg}
+        \caption{Histograma de frecuencias para una distribuci\'{o}n Exponencial $\lambda=5$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+~\\En la gr\'{a}fica se puede observar claramente como el comportamiento de una funci\'{o}n Exponencial va cambiando al aumentar el tama\~{n}o de muestra n hasta llegar a tener un comportamiento aproximado al de una funci\'{o}n normal de par\'{a}metros $\mu$ y $\frac{\sigma}{\sqrt{n}}$. 
+
+\pagebreak\subsection{Punto B.}
+~\\ Para este punto se desea realizar el mismo procedimiento anterior y observar el comportamiento para una distribuci\'{o}n t-Student con 7 grados de libertad.
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=15cm]{figuras/4b.jpeg}
+        \caption{Histograma de frecuencias para una distribuci\'{o}n t-Student con 7 grados de libertad}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+~\\Al igual que en la distribuci\'{o}n exponencial al aumentar el tama\~{n}o de muestra la distribuci\'{o}n t-Student converge a un comportamiento parecido al de la normal de par\'{a}metros $\mu$ y $\frac{\sigma}{\sqrt{n}}$. 
+
+~\\Para lo cual se comprueba el teorema del limite central que dice que entre mas grande sea el numero de la muestra, la distribuci\'{o}n de las medias de la poblaci\'{o}n original tiende a ser NORMAL, as\'{i} la poblaci\'{o}n original tenga una distribuci\'{o}n diferente a la normal, ya sea exponencial, T Student, etc.
+
+~\\Hay que tener en cuenta que la distribuci\'{o}n Normal es la mas utilizada ya que sus propiedades
+son el fundamento de los procedimientos de Inferencia ya que la mayor parte
+de las variables aleatorias de los fen\'{o}menos naturales presentan un comportamiento semejante a esta, y de tal forma fue demostrado con la funci\'{o}n exponencial.
+~\\Al tomar muestras de tama\~{n}os diferentes cada una de estas arroja un resultado distinto lo que conlleva a que la funci\'{o}n este menos dispersa, es decir, su error t\'{i}pico disminuye al aumentar el tama\~{n}o de muestra ya que la normalidad de las estimaciones mejora.
+
+\pagebreak\section{Situaci\'{o}n 5}
+\subsection{Punto A.}
+~\\ Tenemos la siguiente informaci\'{o}n del problema:
+~\\ $\mu=3800$  $\sigma=400psi$ $n=4$ y $\bar{X}=3334$ el cual es el valor de la media sobre la cual se toma la decisi\'{o}n.
+~\\ Para responder a la pregunta sobre el riesgo que corre el proveedor bajo este criterio de decisi\'{o}n, decidimos calcular la probabilidad de que $\bar{X}\leq3334$, entonces:
+~\\ Sabemos que $\bar{X}\sim{N(\mu_x,\frac{\sigma}{\sqrt{n}}})$, en este caso $\bar{X}\sim{N(\mu_x=3800,\frac{\sigma=400}{\sqrt{4}}})=(\mu_x=3800,\sigma=200)$
+~\\Entonces:
+~\\ $P(\bar{X}\leq3334)=P(Z\leq\frac{3334-3800}{200})=P(Z\leq\frac{-466}{200})=P(Z\leq-2.33)=0.0099$ (Utilizando la tabla de la normal est\'{a}ndar)
+~\\Seg\'{u}n lo anterior, logramos ver que la probabilidad de que la media sea menor que 3344 es tan solo de 0.99\%, entonces concluimos que el riesgo que corre el proveedor de que el cliente les devuelva un lote bajo esta regla de decisi\'{o}n es muy bajo, de hecho, seg\'{u}n los resultados, de cada 100 lotes, solo le devolver\'{a} uno aproximadamente. El riesgo lo corre mas bien el comprador, ya que este, con la regla de decisi\'{o}n establecida no va a lograr concluir casi nunca que el proceso esta fuera de control cuando en realidad lo esta. Por ultimo, vi\'{e}ndolo en forma de errores tipo 1 y 2, concluimos que esta regla de decisi\'{o}n cuenta con una probabilidad de cometer error tipo 2 muy alta, es decir, la mayor\'{i}a de veces va a concluir que el proceso esta bajo control, cuando en realidad esta fuera de control.
+\subsection{Punto B.}
+~\\ Si se cambia la media a $\mu=3700$, la probabilidad que existe de que un lote sea detectado bajo estas condiciones es la siguiente:
+~\\ $P(\bar{X}\leq3334)=P(Z\leq\frac{3334-3700}{200})=P(Z\leq\frac{-366}{200})=P(Z\leq-1.83)=0.0336$ (Utilizando la tabla de la normal est\'{a}ndar)
+~\\ Con lo anterior, podemos observar que la probabilidad de que un lote sea detectado bajo esas condiciones es de 3.36\%, un poco mas alto que en el punto anterior, esto nos dice que entre mas cerca este $\mu$ del valor de la media muestral $\bar{X}$, mas alta va a ser esta probabilidad, y por consiguiente, las posibilidades de que el cliente detecte el lote van a ser mayores.
+\pagebreak \subsection{Punto C.}
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/5.png}
+        \caption{Gr\'{a}fica de probabilidades de detectar el lote seg\'{u}n la media $\mu$}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta gr\'{a}fica podemos ver que mientras el valor de la media $\mu$ aumenta, la probabilidad de detectar el lote va disminuyendo, esto pasa, porque la resistencia media con la cual se dice que el proceso de producci\'{o}n esta bajo control es de 3800 psi, entonces a medida que la media muestral aumenta, nos vamos acercando mas a la media te\'{o}rica (3800 en este caso), lo que hace menos probable que se devuelva un lote de varillas met\'{a}licas, ya que mientras mas cercana sea la media muestral a la poblacional, tenemos mas certeza para concluir que las varillas se est\'{a}n haciendo con el proceso adecuado o bajo control.
+
+\pagebreak \subsection{Punto D.}
+~\\ En la gr\'{a}fica que se muestra a continuaci\'{o}n es posible apreciar la probabilidad de detectar el lote para k=5 y k=6, para lo cual se muestra la misma tendencia de la gr\'{a}fica anterior y es que a medida que se incrementa la media $\mu$ la probabilidad disminuye.
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=15cm]{Figuras/5d.jpeg}
+        \caption{Gr\'{a}fica de probabilidades de detectar el lote para k=5 y k=6}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\pagebreak\section{Scripts}
+\begin{verbatim}
+#-------------------------------------------------------------------------------#
+#Punto 1
+#Estimadores planteados:
+#Estimador 1:
+Est1 <- function(datos) {
+  Resul <- (2 * mean(datos) - 1)
+  return(Resul)
+}
+# Estimador 2
+Est2 <- function(datos) {
+  Resul <- max(datos) + min(datos) - 1
+  return(Resul)
+}
+# Estimador 3
+Est3 <- function(datos) {
+  Resul <- max(datos)
+  return(Resul)
+}
+# Estimador 4
+Est4 <- function(datos) {
+  Resul <- median(datos)
+  return(Resul)
+}
+n <- c(20, 30, 40, 50,100, 250)
+theta <- 1200
+Nsim <- 1000
+NsimECM <- 1000
+Pob <- seq(1, theta, 1)
+Res.Es1 <- numeric(Nsim)
+Res.Es2 <- numeric(Nsim)
+Res.Es3 <- numeric(Nsim)
+Res.Es4 <- numeric(Nsim)
+ECM.Es1 <- numeric(length(n))
+ECM.Es2 <- numeric(length(n))
+ECM.Es3 <- numeric(length(n))
+ECM.Es4 <- numeric(length(n))
+Sesgo.Es1 <- numeric(length(n))
+Sesgo.Es2 <- numeric(length(n))
+Sesgo.Es3 <- numeric(length(n))
+Sesgo.Es4 <- numeric(length(n))
+theta_est <- matrix(NA, nrow = 6, ncol = 4)
+var_theta_est <- matrix(NA, nrow = 6, ncol = 4)
+ECM_theta_est <- matrix(NA, nrow = 6, ncol = 4)
+Sesgo_theta_est <- matrix(NA, nrow = 6, ncol = 4)
+
+# Estimacion del Sesgo, Varianza y Error Cuadratico Medio
+for (j in 1:length(n)) {
+  
+  muestra <- sample(Pob, n[j])
+  
+  for (i in 1:Nsim) {
+    muestra <- sample(Pob, n[j])
+    Res.Es1[i] <- Est1(muestra)
+    Res.Es2[i] <- Est2(muestra)
+    Res.Es3[i] <- Est3(muestra)
+    Res.Es4[i] <- Est4(muestra)
+  }
+  
+  ECM.Es1[j] <- sum((theta - Res.Es1)^2)/Nsim
+  ECM.Es2[j] <- sum((theta - Res.Es2)^2)/Nsim
+  ECM.Es3[j] <- sum((theta - Res.Es3)^2)/Nsim
+  ECM.Es4[j] <- sum((theta - Res.Es4)^2)/Nsim
+  
+  Sesgo.Es1[j] <- (theta - mean(Res.Es1))
+  Sesgo.Es2[j] <- (theta - mean(Res.Es2))
+  Sesgo.Es3[j] <- (theta - mean(Res.Es3))
+  Sesgo.Es4[j] <- (theta - mean(Res.Es4))
+  
+  theta_est[j, ] <- c(mean(Res.Es1), mean(Res.Es2),mean(Res.Es3),mean(Res.Es4))
+  var_theta_est[j, ] <- c(var(Res.Es1), var(Res.Es2),var(Res.Es3),var(Res.Es4))
+  ECM_theta_est[j, ] <- c(ECM.Es1[j], ECM.Es2[j], ECM.Es3[j], ECM.Es4[j])
+  Sesgo_theta_est[j, ] <- c(Sesgo.Es1[j], Sesgo.Es2[j],Sesgo.Es3[j],Sesgo.Es4[j])
+}
+
+theta_est <- as.data.frame(theta_est)
+var_theta_est <- as.data.frame(var_theta_est)
+ECM_theta_est <- as.data.frame(ECM_theta_est)
+Sesgo_theta_est <- as.data.frame(Sesgo_theta_est)
+
+#Grafica del comportamiento del sesgo:
+x11()
+plot(n, Sesgo_theta_est[, 1], type = "b", ylim = c(min(Sesgo_theta_est) - 10, max(Sesgo_theta_est) + 
+                                               10), pch = 19, ylab = expression(hat(theta)), main = "Comportamiento del sesgo")
+lines(n, Sesgo_theta_est[,2], type = "b", col = 2, pch = 19)
+lines(n, Sesgo_theta_est[,3], type = "b", col = 3, pch = 19)
+lines(n, Sesgo_theta_est[,4], type = "b", col = 4, pch = 19)
+legend(x=220,y=200, c(expression(hat(theta[1])), expression(hat(theta[2])),expression(hat(theta[3])),expression(hat(theta[4]))), 
+       col = c(1, 2, 3,4), lwd = c(2, 2))
+abline(h = 0, lty = 2, lwd = 2, col = 2)
+
+#Grafica de la varianza de los estimadores
+x11()
+plot(n, var_theta_est[, 1], type = "b", ylim = c(min(var_theta_est) - 10, max(var_theta_est) + 
+                                                     10), pch = 19, ylab = expression(hat(theta)), main = "Comportamiento de la varianza")
+lines(n, var_theta_est[,2], type = "b", col = 2, pch = 19)
+lines(n, var_theta_est[,3], type = "b", col = 3, pch = 19)
+lines(n, var_theta_est[,4], type = "b", col = 4, pch = 19)
+legend(x=220,y=10000, c(expression(hat(theta[1])), expression(hat(theta[2])),expression(hat(theta[3])),expression(hat(theta[4]))), 
+       col = c(1, 2, 3,4), lwd = c(2, 2))
+abline(h = 0, lty = 2, lwd = 2, col = 2)
+
+#Gr?fica del resultado de la estimaci?n
+x11()
+plot(n, theta_est[, 1], type = "b", ylim = c(min(theta_est) - 10, max(theta_est) + 
+                                                   10), pch = 19, ylab = expression(hat(theta)), main = "Resultado de la estimaci?n")
+lines(n, theta_est[,2], type = "b", col = 2, pch = 19)
+lines(n, theta_est[,3], type = "b", col = 3, pch = 19)
+lines(n, theta_est[,4], type = "b", col = 4, pch = 19)
+legend(x=220,y=1000, c(expression(hat(theta[1])), expression(hat(theta[2])),expression(hat(theta[3])),expression(hat(theta[4]))), 
+       col = c(1, 2, 3,4), lwd = c(2, 2))
+abline(h = 0, lty = 2, lwd = 2, col = 2)
+
+#Comportamiento del Error Cuadratico medio
+x11()
+plot(n, ECM_theta_est[, 1], type = "b", ylim = c(min(ECM_theta_est) - 10, max(ECM_theta_est) + 
+                                               10), pch = 19, ylab = expression(hat(theta)), main = "Comportamiento del ECM")
+lines(n, ECM_theta_est[,2], type = "b", col = 2, pch = 19)
+lines(n, ECM_theta_est[,3], type = "b", col = 3, pch = 19)
+lines(n, ECM_theta_est[,4], type = "b", col = 4, pch = 19)
+legend(x=220,y=300000, c(expression(hat(theta[1])), expression(hat(theta[2])),expression(hat(theta[3])),expression(hat(theta[4]))), 
+       col = c(1, 2, 3,4), lwd = c(2, 2))
+abline(h = 0, lty = 2, lwd = 2, col = 2)
+#-------------------------------------------------------------------------------#
+Punto 4.a.
+X~Exponencial(Lambda=5)
+n=500
+x <- rexp(n,5)
+media1 <- mean(x)
+sd1 <- sd(x)
+
+mediaMuestral=function(n){
+  muestra=rexp(n,5)
+  media=mean(muestra)
+  return(media)
+}
+
+m=1000
+muchasMedias=replicate(m,mediaMuestral(n))
+mean(muchasMedias)
+sd(muchasMedias)
+
+para5 <- muchasMedias[1:5]
+para10 <- muchasMedias[1:10]
+para20 <- muchasMedias[1:20]
+para30 <- muchasMedias[1:30]
+para50 <- muchasMedias[1:50]
+para100 <- muchasMedias[1:100]
+
+par(mfrow=c(3,3))
+hist(x, main="Histograma funcion exponencial con Lambda = 5", col="azure3")
+hist(para5, main="Medias observadas en 1000 muestras de tamano 5", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+hist(para10, main="Medias observadas en 1000 muestras de tamano 10", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para10), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para10)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para20, main="Medias observadas en 1000 muestras de tamano 20", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para20), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para20)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para30, main="Medias observadas en 1000 muestras de tamano 30", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para30), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para30)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para50, main="Medias observadas en 1000 muestras de tamano 50", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para50), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para50)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(para100, main="Medias observadas en 1000 muestras de tamano 100", xlab="Media muestral", ylab="Frecuencia", col="azure3")
+xfit <- seq(min(x), max(x), length = 1000)
+yfit <- dnorm(xfit, mean(para100), sd = (media1)/(sqrt(500)))
+yfit <- yfit * diff(h$mids[1:2]) * length(para100)
+lines (xfit, yfit, col = "red", lwd = 2)
+#------------------------------------------------------------------------------#
+Punto 4.b.
+t-Student, grados de libertad = 7 
+n2=500
+y <- rt(n2,7)
+media2 <- mean(y)
+sd2 <- sd(y)
+hist(y)
+
+mediaMuestral2=function(n2){
+  muestra=rt(n2,7)
+  media=mean(muestra)
+  return(media)
+}
+
+m2=1000
+muchasMedias2=replicate(m2,mediaMuestral2(n2))
+mean(muchasMedias2)
+sd(muchasMedias2)
+
+tpara5 <- muchasMedias2[1:5]
+tpara10 <- muchasMedias2[1:10]
+tpara20 <- muchasMedias2[1:20]
+tpara30 <- muchasMedias2[1:30]
+tpara50 <- muchasMedias2[1:50]
+tpara100 <- muchasMedias2[1:100]
+
+t <- hist(muchasMedias2,xlab="Media muestral", ylab="Frecuencia", col="slategray1",freq=T,
+          main="Histograma de las medias muestrales observadas en 1000 muestras de tamano 500 para una funcion t-Student con k=7")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean=mean(muchasMedias2), sd(muchasMedias2))
+yfit <- yfit * diff(t$mids[1:2]) * length(muchasMedias2)
+lines (xfit, yfit, col = "red", lwd = 2)
+
+par(mfrow=c(3,3))
+hist(y, main="Histograma funcion t-Student con 7 grados de libertad",col="azure2")
+hist(tpara5, main="Medias observadas en 1000 muestras de tamano 5",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+hist(tpara10, main="Medias observadas en 1000 muestras de tamano 10",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara10), sd(muchasMedias2))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara10)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara20, main="Medias observadas en 1000 muestras de tamano 20",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara20), sd(muchasMedias2))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara20)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara30, main="Medias observadas en 1000 muestras de tamano 30",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara30), sd(muchasMedias2))
+yfit <- yfit * diff(h$mids[1:2]) * length(tpara30)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara50, main="Medias observadas en 1000 muestras de tamano 50",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara50), sd(muchasMedias2))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara50)
+lines (xfit, yfit, col = "red", lwd = 2)
+hist(tpara100, main="Medias observadas en 1000 muestras de tamano 100",xlab="Media muestral", ylab="Frecuencia", col="azure2")
+xfit <- seq(min(y), max(y), length = 1000)
+yfit <- dnorm(xfit, mean(tpara100), sd(muchasMedias2))
+yfit <- yfit * diff(t$mids[1:2]) * length(tpara100)
+lines (xfit, yfit, col = "red", lwd = 2)
+#------------------------------------------------------------------------------#
+Punto 5.C.
+m <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k=4   #tamano de muestra
+Proba=numeric(length(m))
+for (i in 1:length(m)){
+  prob=pnorm((xbarra-m[i])/(sigma/sqrt(k)))
+  Proba[i]=prob
+}
+
+x11()
+plot(m, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m", col="black", lty=3, lwd=2) 
+#------------------------------------------------------------------------------#
+Punto 5.D.
+m2 <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k2=5   #tamano de muestra
+Proba2=numeric(length(m2))
+for (i in 1:length(m2)){
+  prob2=pnorm((xbarra-m2[i])/(sigma/sqrt(k2)))
+  Proba2[i]=prob2
+}
+
+m3 <-c(3700, 3600, 3500, 3400, 3300, 3200, 3100, 3000, 2900,2800,2700,2600,2500)
+xbarra=3334  #Media de decision
+sigma=400  #Desviacion de x
+k3=6   #tamano de muestra
+Proba3=numeric(length(m3))
+for (i in 1:length(m3)){
+  prob3=pnorm((xbarra-m3[i])/(sigma/sqrt(k3)))
+  Proba3[i]=prob3
+}
+
+par(mfrow=c(1,2))
+plot(m2, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m con k=5", col="blue", lty=3, lwd=2) 
+plot(m3, Proba, type = "b",pch=19, ylab="Probabilidad", main="Grafica de probabilidades para distintos valores de m con k=6", col="red", lty=3, lwd=2) 
+
+\end{verbatim}
+
+\bibliography{Bibliografia}
+\end{document}
