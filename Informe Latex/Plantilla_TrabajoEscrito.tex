@@ -85,7 +85,35 @@
 % Desarrollo de los contenidos del documento
 \pagebreak\section{Situaci\'{o}n 1}
 \subsection{Punto a.}
+~\\ Un estimador maximo verosimil de $\lambda$ para una funcion Poisson$(\lambda)$ esta dado por.
+
+~\\ $$f_{(x)}(x) = \frac{\exp^{\lambda}\lambda^{X}}{X!}$$
+
+~\\ $L(x,\lambda) = \prod_{i=1}^n{}\frac{\exp^{\lambda}\lambda^{X}}{X!}$
+
+~\\ $L(x,\lambda) = \frac{\exp^{\lambda n}\lambda^{\sum{X}}}{X!}$
+~\\ $Ln(L(x,\lambda)) = Ln(\frac{\exp^{\lambda n}\lambda^{\sum{X}}}{X!})$
+
+~\\ $L(x,\lambda) = (-\lambda n) + Ln(\lambda{\sum{x_{i}}}) - (Ln\sum{x_{i}})$
+~\\ $L(x,\lambda) = -(\lambda n) + {\sum{x_{i}}}Ln(\lambda) - (Ln\sum{x_{i}})$
+
+~\\ $\frac{dL(x;\lambda)}{d\lambda} = \frac{d}{d\lambda}(-\lambda n + {\sum{x_{i}}}Ln(\lambda) - (Ln\sum{x_{i}}))$
+
+~\\ $L(x,\lambda) = \frac{\sum{x_{i}}}{\lambda} - n $
+~\\ $\frac{\sum{x_{i}}}{\lambda} - n = 0$
+
+~\\ $\frac{\sum{x_{i}}}{\lambda} = n $
+~\\ $\hat{\lambda} = \frac{\sum{x_{i}}}{n}$
+
+~\\ \textbf{Donde $\hat{\lambda}$ es un estimador maximo verosimil e insesgado para la funcion de distribucion poisson.} 
+ 
+~\\ $\therefore \hat{\lambda} = \hat{x}$
+
 \subsection{Punto b.}
+~\\ En un estimador insesgado puesto que la esperanza es igual al parametro;
+
+~\\$E[\hat{\lambda}]=E[\frac{\sum{x_{i}{n}]$
+
 \subsection{Punto c.}
 
 \pagebreak\section{Situaci\'{o}n 2}
@@ -112,9 +140,11 @@
 \pagebreak\section{Situaci\'{o}n 7}
 ~\ Sean $Y_{1}, Y_{2}, Y_{3},...,Y_{n}$ una muestra aleatoria extraida de una poblacion con funcion de densidad:
 
-~\ $$f({x})= \frac{1}{2\theta +2}  ;  -1<Y<2\theta+1$$
+~\ $$f({y})= \frac{1}{2\theta +2}  ;  -1<Y<2\theta+1$$
+~\ Donde; $f({y}) ~ Uniforme(a=-1,b=2\theta+1)$
+
 \subsection{Punto a.}
-~\\ Un estimador maximo verosimil para $\theta$ y $\sigma^{2}$ son:
+~\ Un estimador maximo verosimil para $\theta$ y $\sigma^{2}$ son:
 
 ~\\ \textbf{Para $\theta$ :}
 
@@ -130,17 +160,40 @@
 
 ~\\ Donde el parametro es el limite superior de la variacion de la funcion de distribucion. 
 
-~\\ $\therefore \hat{\theta} = Maximo = Y = [Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ 
+~\\ $\therefore \hat{\theta} = Maximo = [Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ 
 
 ~\\ \textbf{Para $\sigma^{2}$ :}
 
-~\\ 
-~\\
-~\\
-~\\
+~\\ $\sigma^{2} = Var(Y) = \frac{(b-a)^2}{12}$
+~\\ $Var(Y) = \frac{(2\theta+1-(-1))^2}{12}$
+~\\ $Var(Y) = \frac{(2\theta+2))^2}{12}$
+~\\ $L(y;\sigma^{2}) = \prod_{i=1}^n{} \frac{(2\theta+2))^2}{12}$
+~\\ $L(y;\sigma^{2}) = (\frac{(2\theta+2))^2}{12})^{n}$
+~\\ $Ln(L(y;\sigma^{2})) = Ln(\frac{(2\theta+2))^2}{12})^{n}$
 
+~\\ $L(y;\sigma^{2}) = n(\frac{(2\theta+2))^2}{12})$
+
+~\\ Segun lo anterior podemos concluir que \textbf{{$n(\frac{(2\theta+2))^2}{12})$}} Maximizaria la funcion de L.  
+
+~\\ $Var(Y) = \frac{(2\theta+1-(-1))^2}{12}$
+~\\ $Var(Y) = 4\frac{(\theta+2)^2}{12}$
+~\\ $Var(Y) = \frac{(\theta+2)^2}{3}$
+
+~\\ Sin embargo no es posible medir sus varianzas puesto que $\theta$ es la $Y_{n}$ muestra de $[Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ por lo cual. 
+
+~\\ $Var(Y) = \frac{(Y_{(n)}+2)^2}{3}$
 
 \subsection{Punto b.}
+~\ Un estimador por el metodo de los momentos para $\theta$ esta dado por:
+
+~\\ $E[Y]= E[\frac{(a+b)}{2}]$
+~\\ $E[Y]= E[\frac{(-1+(2\theta+1))}{2}]$
+~\\ $E[Y]= E[\frac{(2\theta)}{2}]$
+
+~\\ $E[Y]= E[\theta]$
+
+~\\ $\theta = \frac{\sum(Y_{i})}{n}$ 
+~\\ $\hat{\theta} = \hat{Y}$
 
 \bibliography{Bibliografia}
 \end{document}
