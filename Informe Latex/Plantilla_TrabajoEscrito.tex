@@ -65,8 +65,8 @@
 \tableofcontents{}
 %\thispagestyle{empty}
 %\newpage
-\listoffigures{}
-\listoftables
+%\listoffigures{}
+%\listoftables
 
 \thispagestyle{empty}
 
@@ -132,13 +132,13 @@
 \subsection{Punto c.}
 ~\\ Para clacular la probabilidad de que en un dia particular se reciban maximo 2 quejas, es decir $P[x<2|\hat{y}=3]$ a partir de la muestra que que cuenta con una media de $\hat{y}=3$ se usa la funcion de densidad de la distribucion de poisson con parametro $\lambda=3$. 
 
-~\\ $P[x<2]= \frac{\exp^{-\lambda}\lambda^{X}}{X!}$
+~\\ $P[x\le2]= \frac{\exp^{-\lambda}\lambda^{X}}{X!}$
 
-~\\ $P[x<2]= \frac{\exp^{-3}3^{0}}{0!} + 
+~\\ $P[x\le2]= \frac{\exp^{-3}3^{0}}{0!} + 
 			 \frac{\exp^{-3}3^{1}}{1!} + 
 			 \frac{\exp^{-3}3^{2}}{2!}$
 			 
-~\\ $P[x<2]= 0.4231 $
+~\\ $P[x\le2]= 0.4231 $
 
 ~\\ Por lo cual la probabilidad que la tiene oficina de recibir como maximo dos quejas en un dia es del {$42.31\%$}
 
@@ -147,11 +147,6 @@
 \subsection{Punto b.} 
 \subsection{Punto c.} 
 
-
-\pagebreak\section{Situaci\'{o}n 3}
-\subsection{Punto a.}
-
-
 \pagebreak\section{Situaci\'{o}n 4}
 \subsection{Punto a.}
 \subsection{Punto b.}
@@ -159,9 +154,18 @@
 
 \pagebreak\section{Situaci\'{o}n 5}
 \subsection{Punto a.}
+~\\ Un estimador por el metodo de los momentos para la funcion de densidad 
+$$f({x;\theta})= \frac{2(\theta^2)}{x^3} ; \theta<x<\infty$$
 
-\pagebreak\section{Situaci\'{o}n 6}
-\subsection{Punto a.}
+~\\ $E[x]=\int_{\theta}^{\infty} \frac{2(\theta^2)}{x^3}$
+
+~\\ $E[x]= 2\theta$
+~\\ $\frac{\sum(x_{i})}{n} = 2\theta$
+
+~\\ $\hat\theta = \frac{\hat{x}}{2}$
+
+~\\ Donde $\hat\theta = \frac{\hat{x}}{2}$ es el estimador por por el me metodo de los momentos para $\theta$ de la funcion de densidad de $f({x;\theta})$
+
 
 \pagebreak\section{Situaci\'{o}n 7}
 ~\ Sean $Y_{1}, Y_{2}, Y_{3},...,Y_{n}$ una muestra aleatoria extraida de una poblacion con funcion de densidad:
