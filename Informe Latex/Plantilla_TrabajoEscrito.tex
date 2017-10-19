@@ -87,7 +87,7 @@
 \subsection{Punto a.}
 ~\\ Un estimador maximo verosimil de $\lambda$ para una funcion Poisson$(\lambda)$ esta dado por.
 
-~\\ $$f_{(x)}(x) = \frac{\exp^{\lambda}\lambda^{X}}{X!}$$
+~\\ $$f_{(x)}(x) = \frac{\exp^{-\lambda}\lambda^{X}}{X!}$$
 
 ~\\ $L(x,\lambda) = \prod_{i=1}^n{}\frac{\exp^{\lambda}\lambda^{X}}{X!}$
 
@@ -112,9 +112,35 @@
 \subsection{Punto b.}
 ~\\ En un estimador insesgado puesto que la esperanza es igual al parametro;
 
-~\\$E[\hat{\lambda}]=E[\frac{\sum{x_{i}{n}]$
+~\\ $E[\hat{\lambda}] = E[\frac{\sum{x_{i}}}{n}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum{x_{i}}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum)E[x]$
+
+~\\ $E[\hat{\lambda}] = E[x]$
+~\\ $\hat{\lambda} = \hat{x}$
+
+~\\ Donde $\hat{\lambda}$ es un estimador insesgado para la funncion poisson de parametro $(\lambda)$. 
+
+~\\ La varianza esta dada por: 
+
+~\\ $Var[\hat{\lambda}]= var[\frac{\sum{x_{i}}}{n}]$
+~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum{x_{i}}]$
+~\\ $Var[\hat{\lambda}]= \frac{1}{n} var[x_{i}]$
+
+~\\ $Var[x_{i}]= \frac{\lambda}{n}$
 
 \subsection{Punto c.}
+~\\ Para clacular la probabilidad de que en un dia particular se reciban maximo 2 quejas, es decir $P[x<2|\hat{y}=3]$ a partir de la muestra que que cuenta con una media de $\hat{y}=3$ se usa la funcion de densidad de la distribucion de poisson con parametro $\lambda=3$. 
+
+~\\ $P[x<2]= \frac{\exp^{-\lambda}\lambda^{X}}{X!}$
+
+~\\ $P[x<2]= \frac{\exp^{-3}3^{0}}{0!} + 
+			 \frac{\exp^{-3}3^{1}}{1!} + 
+			 \frac{\exp^{-3}3^{2}}{2!}$
+			 
+~\\ $P[x<2]= 0.4231 $
+
+~\\ Por lo cual la probabilidad que la tiene oficina de recibir como maximo dos quejas en un dia es del {$42.31\%$}
 
 \pagebreak\section{Situaci\'{o}n 2}
 \subsection{Punto a.}
