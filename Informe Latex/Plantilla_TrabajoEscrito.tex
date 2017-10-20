@@ -149,6 +149,20 @@
 
 \pagebreak\section{Situaci\'{o}n 4}
 \subsection{Punto a.}
+~\\ $$f(y;\theta)=e^{-(y-\theta)};  y>\theta$$  
+~\\ \textbf{ESTIMACION POR MOMENTOS: $M'_1=\mu'_1$}
+~\\ $M'_1=\frac{1}{n}\sum_{i=1}^{n}{y_{i}}=\bar{y}$
+~\\ $\mu'_1=E[Y]=\int \limits_{\theta}^{\infty} y f(y) \cdot dy$
+~\\ $=\int \limits_{\theta}^{\infty} ye^{-(y-\theta)} \cdot dy=\int \limits_{\theta}^{\infty} ye^{-y}e^\theta \cdot dy=e^\theta\int \limits_{\theta}^{\infty}ye^{-y} \cdot dy$
+~\\ Aplicando integracion por partes: $u=y$ ,$dv=e^{-y}$, $du=dy$ y $v=-e^{-y}$ Nos queda:
+~\\ $E[Y]=e^{\theta}[-ye^{-y}+\int \limits_{\theta}^{\infty}e^{-y} \cdot dy] =e^{\theta}[-ye^{-y}- e^{-y}|_{\theta}^{\infty}] $
+~\\ $=e^{\theta}(\theta e^{-\theta}+e^{-\theta})=\theta e^{\theta}e^{-\theta}+e^{\theta}e^{-\theta}= \theta + 1 $ 
+~\\ Entonces, por el metodo de los momentos obtenemos el siguiente estimador:
+~\\ $$\mu'_1=\theta + 1= \bar{y} = M'_1$$
+ $$\hat{\theta}=\bar{y}-1$$
+~\\ \textbf{ESTIMACION POR EL METODO DE MAXIMA VEROSIMILITUD:}
+~\\
+
 \subsection{Punto b.}
 \subsection{Punto c.}
 
@@ -159,7 +173,7 @@
 ~\\ $\mu'_1 =?$
 ~\\ $\mu'_1=E[X]= \int \limits_{\theta}^{\infty} x f(x) \cdot dx$
 ~\\ $E[X]=\int \limits_{\theta}^{\infty} x \frac{2\theta^2}{x^3}\cdot dx=\int \limits_{\theta}^{\infty}\frac{2\theta^2}{x^2}\cdot dx$
-~\\ $E[X]=2\theta^2 \int \limits_{\theta}^{\infty}\frac{1}{x^2}\cdot dx= 2\theta^2[-\frac{1}{x}|{{^\infty}{_\theta}}]=2\theta^2(\frac{1}{\theta})=2\theta$
+~\\ $E[X]=2\theta^2 \int \limits_{\theta}^{\infty}\frac{1}{x^2}\cdot dx= 2\theta^2[-\frac{1}{x}|_{\theta}^{\infty}]=2\theta^2(\frac{1}{\theta})=2\theta$
 ~\\ $$\mu'_1=E[X]=2\theta=\bar{X}=M1'$$
 ~\ $$\hat{\theta}=\frac{\bar{X}}{2}$$
 ~\\ \textbf{En conclusion, el estimador por el metodo de los momentos para $\theta$ de la funcion de densidad $f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $ es $\hat{\theta}=\frac{\bar{X}}{2}$}
