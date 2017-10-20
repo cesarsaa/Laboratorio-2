@@ -107,7 +107,7 @@
 
 ~\\ \textbf{Donde $\hat{\lambda}$ es un estimador maximo verosimil e insesgado para la funcion de distribucion poisson.} 
  
-~\\ $\therefore \hat{\lambda} = \hat{x}$
+~\\ $\therefore \hat{\lambda} = \bar{x}$
 
 \subsection{Punto b.}
 ~\\ En un estimador insesgado puesto que la esperanza es igual al parametro;
@@ -117,7 +117,7 @@
 ~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum)E[x]$
 
 ~\\ $E[\hat{\lambda}] = E[x]$
-~\\ $\hat{\lambda} = \hat{x}$
+~\\ $\hat{\lambda} = \bar{x}$
 
 ~\\ Donde $\hat{\lambda}$ es un estimador insesgado para la funncion poisson de parametro $(\lambda)$. 
 
@@ -154,17 +154,15 @@
 
 \pagebreak\section{Situaci\'{o}n 5}
 \subsection{Punto a.}
-~\\ Un estimador por el metodo de los momentos para la funcion de densidad 
-$$f({x;\theta})= \frac{2(\theta^2)}{x^3} ; \theta<x<\infty$$
-
-~\\ $E[x]=\int_{\theta}^{\infty} \frac{2(\theta^2)}{x^3}$
-
-~\\ $E[x]= 2\theta$
-~\\ $\frac{\sum(x_{i})}{n} = 2\theta$
-
-~\\ $\hat\theta = \frac{\hat{x}}{2}$
-
-~\\ Donde $\hat\theta = \frac{\hat{x}}{2}$ es el estimador por por el me metodo de los momentos para $\theta$ de la funcion de densidad de $f({x;\theta})$
+~\\ $$f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $$
+~\\ $M1'=\sum_{i=1}^{n}\frac{x_{i}}{n}=\bar{x}$
+~\\ $\mu'_1 =?$
+~\\ $\mu'_1=E[X]= \int \limits_{\theta}^{\infty} x f(x) \cdot dx$
+~\\ $E[X]=\int \limits_{\theta}^{\infty} x \frac{2\theta^2}{x^3}\cdot dx=\int \limits_{\theta}^{\infty}\frac{2\theta^2}{x^2}\cdot dx$
+~\\ $E[X]=2\theta^2 \int \limits_{\theta}^{\infty}\frac{1}{x^2}\cdot dx= 2\theta^2[-\frac{1}{x}|{{^\infty}{_\theta}}]=2\theta^2(\frac{1}{\theta})=2\theta$
+~\\ $$\mu'_1=E[X]=2\theta=\bar{X}=M1'$$
+~\ $$\hat{\theta}=\frac{\bar{X}}{2}$$
+~\\ \textbf{En conclusion, el estimador por el metodo de los momentos para $\theta$ de la funcion de densidad $f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $ es $\hat{\theta}=\frac{\bar{X}}{2}$}
 
 
 \pagebreak\section{Situaci\'{o}n 7}
