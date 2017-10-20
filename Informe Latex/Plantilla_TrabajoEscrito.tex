@@ -205,37 +205,25 @@
 ~\\ $\therefore \hat{\theta} = Maximo = [Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ 
 
 ~\\ \textbf{Para $\sigma^{2}$ :}
-
+~\\ Como sabemos que $f(y)$ es uniforme con $a=-1$ y $b=2\theta+1$, tenemos que la varianza es:
 ~\\ $\sigma^{2} = Var(Y) = \frac{(b-a)^2}{12}$
 ~\\ $Var(Y) = \frac{(2\theta+1-(-1))^2}{12}$
-~\\ $Var(Y) = \frac{(2\theta+2))^2}{12}$
-~\\ $L(y;\sigma^{2}) = \prod_{i=1}^n{} \frac{(2\theta+2))^2}{12}$
-~\\ $L(y;\sigma^{2}) = (\frac{(2\theta+2))^2}{12})^{n}$
-~\\ $Ln(L(y;\sigma^{2})) = Ln(\frac{(2\theta+2))^2}{12})^{n}$
-
-~\\ $L(y;\sigma^{2}) = n(\frac{(2\theta+2))^2}{12})$
-
-~\\ Segun lo anterior podemos concluir que \textbf{{$n(\frac{(2\theta+2))^2}{12})$}} Maximizaria la funcion de L.  
-
-~\\ $Var(Y) = \frac{(2\theta+1-(-1))^2}{12}$
-~\\ $Var(Y) = 4\frac{(\theta+2)^2}{12}$
-~\\ $Var(Y) = \frac{(\theta+2)^2}{3}$
-
-~\\ Sin embargo no es posible medir sus varianzas puesto que $\theta$ es la $Y_{n}$ muestra de $[Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ por lo cual. 
-
-~\\ $Var(Y) = \frac{(Y_{(n)}+2)^2}{3}$
+~\\ $Var(Y) = \frac{(2\theta+2)^2}{12}$
+~\\ $Var(Y) = \frac{4\theta^2 +8\theta+4}{12}=\frac{4(\theta^2 +2\theta+1)}{12}=\frac{\theta^2 +2\theta+1}{3}$
+~\\ $Var(Y) = \frac{(\theta+1)^2}{3}$
+~\\ Por la propiedad de la invarianza de los estimadores maximo verosimiles, tenemos que una estimacion para $\sigma^2$ sera:
+~\\ $\hat{\sigma^2}=\frac{(Y_{(n)}+1)^2}{3}$
 
 \subsection{Punto b.}
-~\ Un estimador por el metodo de los momentos para $\theta$ esta dado por:
-
-~\\ $E[Y]= E[\frac{(a+b)}{2}]$
-~\\ $E[Y]= E[\frac{(-1+(2\theta+1))}{2}]$
-~\\ $E[Y]= E[\frac{(2\theta)}{2}]$
-
-~\\ $E[Y]= E[\theta]$
-
-~\\ $\theta = \frac{\sum(Y_{i})}{n}$ 
-~\\ $\hat{\theta} = \hat{Y}$
+~\ La estimacion por momentos para $\theta$ sera:
+~\\ $M'_1=\bar{Y}$
+~\\ $\mu'_1=E[Y]=?$
+~\\ $E[Y]= \frac{(a+b)}{2}$  , ya que f(y) tiene distribucion uniforme
+~\\ $E[Y]= \frac{(-1+(2\theta+1))}{2}$
+~\\ $E[Y]= \frac{(2\theta)}{2}$
+~\\ $E[Y]= \theta$
+~\\ Entonces: $M'_1=\bar{Y}=\theta=\mu'_1$
+~\\ Por tanto: $\hat{\theta}=\bar{Y}$
 
 \bibliography{Bibliografia}
 \end{document}
