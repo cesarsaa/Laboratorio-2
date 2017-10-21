@@ -91,19 +91,19 @@
 
 ~\\ $L(x,\lambda) = \prod_{i=1}^n{}\frac{\exp^{\lambda}\lambda^{X}}{X!}$
 
-~\\ $L(x,\lambda) = \frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^N{X}}}{X!}$
-~\\ $Ln(L(x,\lambda)) = Ln(\frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^N{X}}}{X!})$
+~\\ $L(x,\lambda) = \frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^n{X}}}{X!}$
+~\\ $Ln(L(x,\lambda)) = Ln(\frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^n{X}}}{X!})$
 
-~\\ $L(x,\lambda) = (-\lambda n) + Ln(\lambda{\sum_{i=1}^N{x_{i}}}) - (Ln\sum_{i=1}^N{x_{i}})$
-~\\ $L(x,\lambda) = -(\lambda n) + {\sum_{i=1}^N{x_{i}}}Ln(\lambda) - (Ln\sum_{i=1}^N{x_{i}})$
+~\\ $L(x,\lambda) = (-\lambda n) + Ln(\lambda{\sum_{i=1}^n{x_{i}}}) - (Ln\prod_{i=1}^n{x_{i}})$
+~\\ $L(x,\lambda) = -(\lambda n) + {\sum_{i=1}^N{x_{i}}}Ln(\lambda) - (Ln\prod_{i=1}^n{x_{i}})$
 
-~\\ $\frac{dL(x;\lambda)}{d\lambda} = \frac{d}{d\lambda}(-\lambda n + {\sum_{i=1}^N{x_{i}}}Ln(\lambda) - (Ln\sum_{i=1}^N{x_{i}}))$
+~\\ $\frac{dL(x;\lambda)}{d\lambda} = \frac{d}{d\lambda}(-\lambda n + {\sum_{i=1}^n{x_{i}}}Ln(\lambda) - (Ln\prod_{i=1}^n{x_{i}}))$
 
-~\\ $L(x,\lambda) = \frac{\sum_{i=1}^N{x_{i}}}{\lambda} - n $
+~\\ $L(x,\lambda) = \frac{\sum_{i=1}^n{x_{i}}}{\lambda} - n $
 ~\\ $\frac{\sum_{i=1}^N{x_{i}}}{\lambda} - n = 0$
 
-~\\ $\frac{\sum_{i=1}^N{x_{i}}}{\lambda} = n $
-~\\ $\hat{\lambda} = \frac{\sum_{i=1}^N{x_{i}}}{n}$
+~\\ $\frac{\sum_{i=1}^n{x_{i}}}{\lambda} = n $
+~\\ $\hat{\lambda} = \frac{\sum_{i=1}^n{x_{i}}}{n}$
 
 ~\\ \textbf{Donde $\hat{\lambda}$ es un estimador m\'{a}ximo veros\'{i}mil e insesgado para la funci\'{o}n de distribuci\'{o}n poisson.} 
  
@@ -112,9 +112,9 @@
 \subsection{Punto b.}
 ~\\ En un estimador insesgado puesto que la esperanza es igual al par\'{a}metro;
 
-~\\ $E[\hat{\lambda}] = E[\frac{\sum_{i=1}^N{x_{i}}}{n}]$
-~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum_{i=1}^N{x_{i}}]$
-~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum_{i=1}^N)E[x]$
+~\\ $E[\hat{\lambda}] = E[\frac{\sum_{i=1}^n{x_{i}}}{n}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum_{i=1}^n{x_{i}}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum_{i=1}^n)E[x]$
 
 ~\\ $E[\hat{\lambda}] = E[x]$
 ~\\ $\hat{\lambda} = \bar{x}$
@@ -123,8 +123,8 @@
 
 ~\\ La varianza esta dada por: 
 
-~\\ $Var[\hat{\lambda}]= var[\frac{\sum_{i=1}^N{x_{i}}}{n}]$
-~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum_{i=1}^N{x_{i}}]$
+~\\ $Var[\hat{\lambda}]= var[\frac{\sum_{i=1}^n{x_{i}}}{n}]$
+~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum_{i=1}^n{x_{i}}]$
 ~\\ $Var[\hat{\lambda}]= \frac{1}{n} var[x_{i}]$
 
 ~\\ $Var[x_{i}]= \frac{\lambda}{n}$
@@ -240,7 +240,6 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 ~\\ $$\mu'_1=\theta + 1= \bar{y} = M'_1$$
  $$\hat{\theta}=\bar{y}-1$$
 ~\\ \textbf{ESTIMACI\'{O}N POR EL M\'{E}TODO DE M\'{A}XIMA VEROSIMILITUD:}
-~\\ $L(\theta; y_{1},y_{2},...,y_{n})=\prod \limits_{i=0}^{n}(e^{-(y-\theta)})=e^{-\sum \limits_{i=1}^n {(y_{i}-\theta)}}$
 ~\\
 
 \subsection{Punto b.}
