@@ -85,7 +85,7 @@
 % Desarrollo de los contenidos del documento
 \pagebreak\section{Situaci\'{o}n 1}
 \subsection{Punto a.}
-~\\ Un estimador maximo verosimil de $\lambda$ para una funcion Poisson$(\lambda)$ esta dado por.
+~\\ Un estimador m\'{a}ximo veros\'{i}mil de $\lambda$ para una funci\'{o}n Poisson$(\lambda)$ esta dado por.
 
 ~\\ $$f_{(x)}(x) = \frac{\exp^{-\lambda}\lambda^{X}}{X!}$$
 
@@ -105,12 +105,12 @@
 ~\\ $\frac{\sum{x_{i}}}{\lambda} = n $
 ~\\ $\hat{\lambda} = \frac{\sum{x_{i}}}{n}$
 
-~\\ \textbf{Donde $\hat{\lambda}$ es un estimador maximo verosimil e insesgado para la funcion de distribucion poisson.} 
+~\\ \textbf{Donde $\hat{\lambda}$ es un estimador m\'{a}ximo veros\'{i}mil e insesgado para la funci\'{o}n de distribuci\'{o}n poisson.} 
  
 ~\\ $\therefore \hat{\lambda} = \bar{x}$
 
 \subsection{Punto b.}
-~\\ En un estimador insesgado puesto que la esperanza es igual al parametro;
+~\\ En un estimador insesgado puesto que la esperanza es igual al par\'{a}metro;
 
 ~\\ $E[\hat{\lambda}] = E[\frac{\sum{x_{i}}}{n}]$
 ~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum{x_{i}}]$
@@ -119,7 +119,7 @@
 ~\\ $E[\hat{\lambda}] = E[x]$
 ~\\ $\hat{\lambda} = \bar{x}$
 
-~\\ Donde $\hat{\lambda}$ es un estimador insesgado para la funncion poisson de parametro $(\lambda)$. 
+~\\ Donde $\hat{\lambda}$ es un estimador insesgado para la funci\'{o}n poisson de par\'{a}metro $(\lambda)$. 
 
 ~\\ La varianza esta dada por: 
 
@@ -130,7 +130,7 @@
 ~\\ $Var[x_{i}]= \frac{\lambda}{n}$
 
 \subsection{Punto c.}
-~\\ Para clacular la probabilidad de que en un dia particular se reciban maximo 2 quejas, es decir $P[x<2|\hat{y}=3]$ a partir de la muestra que que cuenta con una media de $\hat{y}=3$ se usa la funcion de densidad de la distribucion de poisson con parametro $\lambda=3$. 
+~\\ Para calcular la probabilidad de que en un d\'{i}a particular se reciban m\'{a}ximo 2 quejas, es decir $P[x<2|\hat{y}=3]$ a partir de la muestra que que cuenta con una media de $\hat{y}=3$ se usa la funci\'{o}n de densidad de la distribuci\'{o}n de poisson con par\'{a}metro $\lambda=3$. 
 
 ~\\ $P[x\le2]= \frac{\exp^{-\lambda}\lambda^{X}}{X!}$
 
@@ -140,13 +140,13 @@
 			 
 ~\\ $P[x\le2]= 0.4231 $
 
-~\\ Por lo cual la probabilidad que la tiene oficina de recibir como maximo dos quejas en un dia es del {$42.31\%$}
+~\\ Por lo cual la probabilidad que la tiene oficina de recibir como m\'{a}ximo dos quejas en un d\'{i}a es del {$42.31\%$}
 
 \pagebreak\section{Situaci\'{o}n 2}
 $$f(y,\lambda,\gamma)=\lambda e^{-\lambda(y-\gamma)}$$
 \subsection{Punto a.}
-~\\Estimacion de $\lambda$ y $\gamma$ por maxima verosimilitud:
-~\\ Empezamos con la estimacion de $\lambda$:
+~\\Estimaci\'{o}n de $\lambda$ y $\gamma$ por m\'{a}xima verosimilitud:
+~\\ Empezamos con la estimaci\'{o}n de $\lambda$:
 ~\\ $L(\lambda,\gamma |y1,..yn)=\prod \limits_{i=1}^{n}(\lambda e^{-\lambda (y-\gamma)})=\lambda^n e^{-\lambda \sum \limits_{i=1}^{n}({y_{i}-\gamma})}=\lambda^n e^{-\lambda (\sum \limits_{i=1}^{n}{y_{i}}-n\gamma)}=\lambda^n e^{-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma}$
 ~\\ $Ln(L(\lambda,\gamma |y1,..yn)=nLn(\lambda)+n\lambda\gamma-\lambda\sum\limits_{i=1}^{n}{y_{i}}$
 ~\\ $\frac{\partial(Ln(L(\lambda,\gamma |y1,..yn)))}{\partial\lambda}=\frac{n}{\lambda}+n\gamma-\sum\limits_{i=1}^{n}{y_{i}}$
@@ -154,45 +154,45 @@ $$f(y,\lambda,\gamma)=\lambda e^{-\lambda(y-\gamma)}$$
 $$\frac{n}{\lambda}+n\gamma-\sum\limits_{i=1}^{n}{y_{i}}=0$$
 ~\ $$\frac{n}{\lambda}=\sum\limits_{i=1}^{n}{y_{i}}-n\gamma$$
 ~\ $$\frac{1}{\lambda}=\bar{y}-\gamma$$
-~\ En conclusion:
+~\ En conclusi\'{o}n:
 $$\hat{\lambda}=\frac{1}{\bar{y}-\gamma}$$
-~\\ Ahora, la estimacion para $\gamma$ sera:
+~\\ Ahora, la estimaci\'{o}n para $\gamma$ sera:
 
 ~\\ $\frac{\partial(Ln(L(\lambda,\gamma |y1,..yn)))}{\partial\gamma}= n$
-~\\ Podemos ver que en la derivada parcial se nos desaparece el parametro de interes $\gamma$, sabemos que lo que se quiere con este metodo es maximizar la funcion de verosimilitud. Entonces, observando nuestra funcion de verosimilitud, tenemos:
+~\\ Podemos ver que en la derivada parcial se nos desaparece el par\'{a}metro de inter\'{e}s $\gamma$, sabemos que lo que se quiere con este m\'{e}todo es maximizar la funci\'{o}n de verosimilitud. Entonces, observando nuestra funci\'{o}n de verosimilitud, tenemos:
 ~\\ $L(\lambda,\gamma |y1,..yn)=\lambda^n e^{-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma}$
-~\\ Tomando todas las variables en la anterior expresion como constantes excepto $\gamma$ , para maximizar dicha funcion, $\gamma$  debe ser lo mas pequeno posible, ya que con ello, el exponente $-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma$ es mas pequeno y por tanto la exponencial va a ser mayor, haciendo maxima toda la expresion.
-~\\ En conclusion:
+~\\ Tomando todas las variables en la anterior expresi\'{o}n como constantes excepto $\gamma$ , para maximizar dicha funci\'{o}n, $\gamma$  debe ser lo mas peque\~{n}o posible, ya que con ello, el exponente $-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma$ es mas peque\~{n}o y por tanto la exponencial va a ser mayor, haciendo m\'{a}xima toda la expresi\'{o}n.
+~\\ En conclusi\'{o}n:
 $$\hat{\gamma}=y_(1)= min[y1,y2,y3,...,yn]$$
  
 \subsection{Punto b.} 
-~\\ Si observamos detalladamente la funcion de densidad, vemos que una funcion de una distribucion exponencial con $x=y-\gamma$
-~\\ Haciendo la sustitucion anterior tenemos:
+~\\ Si observamos detalladamente la funci\'{o}n de densidad, vemos que es una funci\'{o}n de una distribuci\'{o}n exponencial con $x=y-\gamma$
+~\\ Haciendo la sustituci\'{o}n anterior tenemos:
 $$f(y,\lambda,\gamma)=\lambda e^{-\lambda(y-\gamma)}=\lambda e^{-\lambda x}$$
 ~\\ Como denotamos $x=y-\gamma$, despejando $y$, nos queda $y=x+\gamma$
-~\\ \textbf{Estimacion para el promedio:}
+~\\ \textbf{Estimaci\'{o}n para el promedio:}
 ~\\ $E[y]=E[x+\gamma]=E[x]+E[\gamma]$ ; como x es exponencial $E[x]=\frac{1}{\lambda}$ y como $\gamma$ es constante, $E[\gamma]=\gamma$
 ~\\ Entonces:
 ~\\ $E[y]=\frac{1}{\lambda}+\gamma$
 ~\\ Por la propiedad de la invarianza, reemplazando nuestro estimador para $\lambda$:
 $$\hat{E[y]}=\frac{1}{\frac{1}{\bar{y}-\gamma}}+\gamma=\bar{y}-\gamma+\gamma=\bar{y}$$
-~\ En conclusion:
+~\ En conclusi\'{o}n:
 $$\hat{E[y]}=\bar{y}$$
-~\\ \textbf{Estimacion para la varianza:}
+~\\ \textbf{Estimaci\'{o}n para la varianza:}
 ~\\ $V[y]=V[x+\gamma]=V[x]+V[\gamma]$ ; como x es exponencial $V[x]=\frac{1}{\lambda^2}$ y como $\gamma$ es constante, $V[\gamma]=0$
 ~\\ Entonces:
 ~\\ $V[y]=\frac{1}{\lambda^2}$
 ~\\ Teniendo en cuenta la propiedad de la invarianza, reemplazando nuestro estimador para $\lambda$ tenemos:
-~\\ $\hat{V[y]}=\frac{1}{(\frac{1}{\bar{y}-\gamma})^2}$, observamos que depende de $\gamma$, como el estimador para $\gamma$ es maximo verosimil, tambien se puede aplicar la propiedad de la invarianza, entonces, reemplazando tenemos:
+~\\ $\hat{V[y]}=\frac{1}{(\frac{1}{\bar{y}-\gamma})^2}$, observamos que depende de $\gamma$, como el estimador para $\gamma$ es m\'{a}ximo veros\'{i}mil, tambi\'{e}n se puede aplicar la propiedad de la invarianza, entonces, reemplazando tenemos:
 ~\\ $$\hat{V[y]}=\frac{1}{(\frac{1}{\bar{y}-y_{(1)}})^2}=(y-y_{(1)})^2$$
-~\ En conclusion:
+~\ En conclusi\'{o}n:
 $$\hat{V[y]}=(y-y_{(1)})^2$$
-~\\ \textbf{Estimacion para la mediana:}
+~\\ \textbf{Estimaci\'{o}n para la mediana:}
 ~\\ $Me[y]=Me[x+\gamma]=Me[x]+Me[\gamma]$ ; como $\gamma$ es constante, $Me[\gamma]=\gamma$. Por otra parte, la mediana de x debemos hallarla.
 ~\\ Sabemos que la mediana esta definida como el punto que nos acumula una probabilidad de 0.5, entonces para hallarla se hace el siguiente procedimiento: 
 ~\\ $Me[x]=\int \limits_{?}^{M}\lambda e^{-\lambda x}dx=0.5$  Podemos ver que el limite superior lo denotamos como M, el cual es la la mediana. y el limite inferior debemos hallarlo.
 ~\\ como $x=y-\gamma$ y $0<\gamma<y<\infty$ por lo tanto $0<x<\infty$
-~\\ La integral quedaria:
+~\\ La integral quedar\'{i}a:
 ~\\ $$Me[x]=\int \limits_{0}^{M}\lambda e^{-\lambda x}dx=0.5$$
 ~\\ $$=\lambda \int \limits_{0}^{M} e^{-\lambda x}dx=0.5$$ 
 ~\\ Sea $u=-\lambda x$, $du=-\lambda dx$
@@ -208,25 +208,38 @@ $$Me[x]=-\frac{Ln(0.5)}{\lambda}$$
 $$Me[y]=Me[x]+\gamma=-\frac{Ln(0.5)}{\lambda}+\gamma$$
 ~\\ Ahora, aplicando la propiedad de la invarianza. Reemplazando nuestros estimadores, nos queda:
 ~\\ $$Me[y]=-\frac{Ln(0.5)}{\frac{1}{\bar{y}-y_{(1)}}}+y_{(1)}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
-~\\En conclusion:
+~\\En conclusi\'{o}n:
 $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 \subsection{Punto c.} 
-~\\ 
+~\\ Como el fabricante piensa igualar la garant\'{i}a a la de su competencia que es de 2 a\~{n}os (730 d\'{i}as), es decir, si el componente se da\~{n}a en menos de 2 a\~{n}os, este tendr\'{a} que reponerlo. Queremos saber que porcentaje de componentes deber\'{i}a reponer al igualar su garant\'{i}a con la de la competencia.
+~\\ En s\'{i}mbolos matem\'{a}ticos, tendr\'{i}amos que hallar $P[y<730]$ ya que la variable y esta dada en d\'{i}as.
+~\\ la muestra obtenida sobre 10 componentes fue: 730, 780, 740, 650, 670, 800, 1000, 1110, 900, 450. Por tanto $\bar{y}=783$
+~\\ Como la funci\'{o}n de distribuci\'{o}n de y depende de $\lambda$ y $\gamma$, tendremos que utilizar nuestros estimadores para calcular estos par\'{a}metros.
+~\\ Hallaremos primero $\gamma$:
+~\\ $$\hat{\gamma}=y_{(1)}=450$$
+~\\ Ahora, hallaremos $\lambda$:
+ $$\hat{\lambda}=\frac{1}{\bar{y}-\gamma}=\frac{1}{783-450}=0.003$$
+~\\ Entonces: 
+~\\ Como f(y) es exponencial con $x=y-\gamma$, entonces $P[y<c]=1-e^{-\lambda(y-\gamma)}$
+~\\ En nuestro caso:
+~\\ $P[y<730|\bar{y}=783]=1-e^{-0.003(730-450)}=1-e^{-0.8408}=0.5686$
 
+
+~\\ \textbf{El fabricante tendr\'{a} que reponer aproximadamente el $56.86\%$ de los componentes.}
 \pagebreak\section{Situaci\'{o}n 4}
 \subsection{Punto a.}
 ~\\ $$f(y;\theta)=e^{-(y-\theta)};  y>\theta$$  
-~\\ \textbf{ESTIMACION POR MOMENTOS: $M'_1=\mu'_1$}
+~\\ \textbf{ESTIMACI\'{O}N POR MOMENTOS: $M'_1=\mu'_1$}
 ~\\ $M'_1=\frac{1}{n}\sum_{i=1}^{n}{y_{i}}=\bar{y}$
 ~\\ $\mu'_1=E[Y]=\int \limits_{\theta}^{\infty} y f(y) \cdot dy$
 ~\\ $=\int \limits_{\theta}^{\infty} ye^{-(y-\theta)} \cdot dy=\int \limits_{\theta}^{\infty} ye^{-y}e^\theta \cdot dy=e^\theta\int \limits_{\theta}^{\infty}ye^{-y} \cdot dy$
-~\\ Aplicando integracion por partes: $u=y$ ,$dv=e^{-y}$, $du=dy$ y $v=-e^{-y}$ Nos queda:
+~\\ Aplicando integraci\'{o}n por partes: $u=y$ ,$dv=e^{-y}$, $du=dy$ y $v=-e^{-y}$ Nos queda:
 ~\\ $E[Y]=e^{\theta}[-ye^{-y}+\int \limits_{\theta}^{\infty}e^{-y} \cdot dy] =e^{\theta}[-ye^{-y}- e^{-y}|_{\theta}^{\infty}] $
 ~\\ $=e^{\theta}(\theta e^{-\theta}+e^{-\theta})=\theta e^{\theta}e^{-\theta}+e^{\theta}e^{-\theta}= \theta + 1 $ 
-~\\ Entonces, por el metodo de los momentos obtenemos el siguiente estimador:
+~\\ Entonces, por el m\'{e}todo de los momentos obtenemos el siguiente estimador:
 ~\\ $$\mu'_1=\theta + 1= \bar{y} = M'_1$$
  $$\hat{\theta}=\bar{y}-1$$
-~\\ \textbf{ESTIMACION POR EL METODO DE MAXIMA VEROSIMILITUD:}
+~\\ \textbf{ESTIMACI\'{O}N POR EL M\'{E}TODO DE M\'{A}XIMA VEROSIMILITUD:}
 ~\\
 
 \subsection{Punto b.}
@@ -242,17 +255,17 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 ~\\ $E[X]=2\theta^2 \int \limits_{\theta}^{\infty}\frac{1}{x^2}\cdot dx= 2\theta^2[-\frac{1}{x}|_{\theta}^{\infty}]=2\theta^2(\frac{1}{\theta})=2\theta$
 ~\\ $$\mu'_1=E[X]=2\theta=\bar{X}=M1'$$
 ~\ $$\hat{\theta}=\frac{\bar{X}}{2}$$
-~\\ \textbf{En conclusion, el estimador por el metodo de los momentos para $\theta$ de la funcion de densidad $f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $ es $\hat{\theta}=\frac{\bar{X}}{2}$}
+~\\ \textbf{En conclusi\'{o}n, el estimador por el m\'{e}todo de los momentos para $\theta$ de la funci\'{o}n de densidad $f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $ es $\hat{\theta}=\frac{\bar{X}}{2}$}
 
 
 \pagebreak\section{Situaci\'{o}n 7}
-~\ Sean $Y_{1}, Y_{2}, Y_{3},...,Y_{n}$ una muestra aleatoria extraida de una poblacion con funcion de densidad:
+~\ Sean $Y_{1}, Y_{2}, Y_{3},...,Y_{n}$ una muestra aleatoria extra\'{i}da de una poblaci\'{o}n con funci\'{o}n de densidad:
 
 ~\ $$f({y})= \frac{1}{2\theta +2}  ;  -1<Y<2\theta+1$$
 ~\ Donde; $f({y}) ~ Uniforme(a=-1,b=2\theta+1)$
 
 \subsection{Punto a.}
-~\ Un estimador maximo verosimil para $\theta$ y $\sigma^{2}$ son:
+~\ Un estimador m\'{a}ximo veros\'{i}mil para $\theta$ y $\sigma^{2}$ son:
 
 ~\\ \textbf{Para $\theta$ :}
 
@@ -266,7 +279,7 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 
 ~\\ $\hat{\theta} = \frac{n}{\theta+1}$
 
-~\\ Donde el parametro es el limite superior de la variacion de la funcion de distribucion. 
+~\\ Donde el par\'{a}metro es el limite superior de la variaci\'{o}n de la funci\'{o}n de distribuci\'{o}n. 
 
 ~\\ $\therefore \hat{\theta} = Maximo = [Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ 
 
@@ -277,14 +290,14 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 ~\\ $Var(Y) = \frac{(2\theta+2)^2}{12}$
 ~\\ $Var(Y) = \frac{4\theta^2 +8\theta+4}{12}=\frac{4(\theta^2 +2\theta+1)}{12}=\frac{\theta^2 +2\theta+1}{3}$
 ~\\ $Var(Y) = \frac{(\theta+1)^2}{3}$
-~\\ Por la propiedad de la invarianza de los estimadores maximo verosimiles, tenemos que una estimacion para $\sigma^2$ sera:
+~\\ Por la propiedad de la invarianza de los estimadores m\'{a}ximo veros\'{i}miles, tenemos que una estimaci\'{o}n para $\sigma^2$ sera:
 ~\\ $\hat{\sigma^2}=\frac{(Y_{(n)}+1)^2}{3}$
 
 \subsection{Punto b.}
-~\ La estimacion por momentos para $\theta$ sera:
+~\ La estimaci\'{o}n por momentos para $\theta$ sera:
 ~\\ $M'_1=\bar{Y}$
 ~\\ $\mu'_1=E[Y]=?$
-~\\ $E[Y]= \frac{(a+b)}{2}$  , ya que f(y) tiene distribucion uniforme
+~\\ $E[Y]= \frac{(a+b)}{2}$  , ya que f(y) tiene distribuci\'{o}n uniforme
 ~\\ $E[Y]= \frac{(-1+(2\theta+1))}{2}$
 ~\\ $E[Y]= \frac{(2\theta)}{2}$
 ~\\ $E[Y]= \theta$
