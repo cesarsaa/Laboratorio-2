@@ -91,6 +91,7 @@
 
 ~\\ $L(x,\lambda) = \prod \limits_{i=1}^n{}\frac{\exp^{-\lambda}\lambda^{X}}{X!}$
 
+<<<<<<< HEAD
 ~\\ $L(x,\lambda) = \frac{\exp^{-\lambda n}\lambda^{\sum\limits_{i=1}^n{X}}}{ \prod \limits_{i=1}^n [x_{i}!]}$
 ~\\ $Ln(L(x,\lambda)) = Ln\left(\frac{\exp^{-\lambda n}\lambda^{\sum\limits_{i=1}^n{X}}}{ \prod \limits_{i=1}^n [x_{i}!]}\right)$
 
@@ -104,6 +105,21 @@
 
 ~\\ $\frac{\sum\limits_{i=1}^n{x_{i}}}{\lambda} = n $
 ~\\ $\hat{\lambda} = \frac{\sum\limits_{i=1}^n{x_{i}}}{n}$
+=======
+~\\ $L(x,\lambda) = \frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^n{X}}}{X!}$
+~\\ $Ln(L(x,\lambda)) = Ln(\frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^n{X}}}{X!})$
+
+~\\ $L(x,\lambda) = (-\lambda n) + Ln(\lambda{\sum_{i=1}^n{x_{i}}}) - (Ln\prod_{i=1}^n{x_{i}})$
+~\\ $L(x,\lambda) = -(\lambda n) + {\sum_{i=1}^n{x_{i}}}Ln(\lambda) - (Ln\prod_{i=1}^n{x_{i}})$
+
+~\\ $\frac{dL(x;\lambda)}{d\lambda} = \frac{d}{d\lambda}(-\lambda n + {\sum_{i=1}^n{x_{i}}}Ln(\lambda) - (Ln\prod_{i=1}^n{x_{i}}))$
+
+~\\ $L(x,\lambda) = \frac{\sum_{i=1}^n{x_{i}}}{\lambda} - n $
+~\\ $\frac{\sum_{i=1}^n{x_{i}}}{\lambda} - n = 0$
+
+~\\ $\frac{\sum_{i=1}^n{x_{i}}}{\lambda} = n $
+~\\ $\hat{\lambda} = \frac{\sum_{i=1}^n{x_{i}}}{n}$
+>>>>>>> fc4ff6ec5992448cf528c8d8143964b4689e1a83
 
 ~\\ \textbf{Donde $\hat{\lambda}$ es un estimador m\'{a}ximo veros\'{i}mil e insesgado para la funci\'{o}n de distribuci\'{o}n poisson.} 
  
@@ -112,9 +128,15 @@
 \subsection{Punto b.}
 ~\\ En un estimador insesgado puesto que la esperanza es igual al par\'{a}metro;
 
+<<<<<<< HEAD
 ~\\ $E[\hat{\lambda}] = E[\frac{\sum\limits_{i=1}^n{x_{i}}}{n}]$
 ~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum\limits_{i=1}^n{x_{i}}]$
 ~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum\limits_{i=1}^{n} E[x])$
+=======
+~\\ $E[\hat{\lambda}] = E[\frac{\sum_{i=1}^n{x_{i}}}{n}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum_{i=1}^n{x_{i}}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum_{i=1}^n)E[x]$
+>>>>>>> fc4ff6ec5992448cf528c8d8143964b4689e1a83
 
 ~\\ $E[\hat{\lambda}] = E[x]$
 ~\\ $\hat{\lambda} = \bar{x}$
@@ -123,8 +145,13 @@
 
 ~\\ La varianza esta dada por: 
 
+<<<<<<< HEAD
 ~\\ $Var[\hat{\lambda}]= var[\frac{\sum\limits_{i=1}^n{x_{i}}}{n}]$
 ~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum\limits_{i=1}^n{x_{i}}]$
+=======
+~\\ $Var[\hat{\lambda}]= var[\frac{\sum_{i=1}^n{x_{i}}}{n}]$
+~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum_{i=1}^n{x_{i}}]$
+>>>>>>> fc4ff6ec5992448cf528c8d8143964b4689e1a83
 ~\\ $Var[\hat{\lambda}]= \frac{1}{n} var[x_{i}]$
 
 ~\\ $Var[\hat{\lambda}]= \frac{\lambda}{n}$
@@ -240,6 +267,7 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 ~\\ $$\mu'_1=\theta + 1= \bar{y} = M'_1$$
  $$\hat{\theta}=\bar{y}-1$$
 ~\\ \textbf{ESTIMACI\'{O}N POR EL M\'{E}TODO DE M\'{A}XIMA VEROSIMILITUD:}
+<<<<<<< HEAD
 ~\\ $L(\theta; y_{1},y_{2},...,y_{n})=\prod \limits_{i=0}^{n}(e^{-(y-\theta)})=e^{-\sum \limits_{i=1}^n {(y_{i}-\theta)}}=e^{-\sum \limits_{i=1}^n y_{i} + n\theta}$
 ~\\ Aplicando logaritmo natural:
 ~\\ $Ln(L(\theta; y_{1},y_{2},...,y_{n}))=-\sum \limits_{i=1}^n y_{i} + n\theta$
@@ -253,6 +281,9 @@ $$L(\theta; y_{1},y_{2},...,y_{n})=e^{-\sum \limits_{i=1}^n y_{i} + n\theta}$$
 ~\\ Ahora, como el dominio de la funcion de densidad nos dice que $y>\theta$, $\theta$ sera maxima cuando sea igual al $Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace$
 ~\\ \textbf{En conclusion:}
 $$\hat{\theta}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace=y_{(n)}$$
+=======
+~\\
+>>>>>>> fc4ff6ec5992448cf528c8d8143964b4689e1a83
 
 \subsection{Punto b.}
 ~\\ Ahora veremos si los estimadores hallados en el punto anterior son insesgados:
