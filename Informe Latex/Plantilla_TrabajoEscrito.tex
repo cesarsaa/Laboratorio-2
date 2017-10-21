@@ -143,9 +143,75 @@
 ~\\ Por lo cual la probabilidad que la tiene oficina de recibir como maximo dos quejas en un dia es del {$42.31\%$}
 
 \pagebreak\section{Situaci\'{o}n 2}
+$$f(y,\lambda,\gamma)=\lambda e^{-\lambda(y-\gamma)}$$
 \subsection{Punto a.}
+~\\Estimacion de $\lambda$ y $\gamma$ por maxima verosimilitud:
+~\\ Empezamos con la estimacion de $\lambda$:
+~\\ $L(\lambda,\gamma |y1,..yn)=\prod \limits_{i=1}^{n}(\lambda e^{-\lambda (y-\gamma)})=\lambda^n e^{-\lambda \sum \limits_{i=1}^{n}({y_{i}-\gamma})}=\lambda^n e^{-\lambda (\sum \limits_{i=1}^{n}{y_{i}}-n\gamma)}=\lambda^n e^{-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma}$
+~\\ $Ln(L(\lambda,\gamma |y1,..yn)=nLn(\lambda)+n\lambda\gamma-\lambda\sum\limits_{i=1}^{n}{y_{i}}$
+~\\ $\frac{\partial(Ln(L(\lambda,\gamma |y1,..yn)))}{\partial\lambda}=\frac{n}{\lambda}+n\gamma-\sum\limits_{i=1}^{n}{y_{i}}$
+~\\Entonces:
+$$\frac{n}{\lambda}+n\gamma-\sum\limits_{i=1}^{n}{y_{i}}=0$$
+~\ $$\frac{n}{\lambda}=\sum\limits_{i=1}^{n}{y_{i}}-n\gamma$$
+~\ $$\frac{1}{\lambda}=\bar{y}-\gamma$$
+~\ En conclusion:
+$$\hat{\lambda}=\frac{1}{\bar{y}-\gamma}$$
+~\\ Ahora, la estimacion para $\gamma$ sera:
+
+~\\ $\frac{\partial(Ln(L(\lambda,\gamma |y1,..yn)))}{\partial\gamma}= n$
+~\\ Podemos ver que en la derivada parcial se nos desaparece el parametro de interes $\gamma$, sabemos que lo que se quiere con este metodo es maximizar la funcion de verosimilitud. Entonces, observando nuestra funcion de verosimilitud, tenemos:
+~\\ $L(\lambda,\gamma |y1,..yn)=\lambda^n e^{-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma}$
+~\\ Tomando todas las variables en la anterior expresion como constantes excepto $\gamma$ , para maximizar dicha funcion, $\gamma$  debe ser lo mas pequeno posible, ya que con ello, el exponente $-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma$ es mas pequeno y por tanto la exponencial va a ser mayor, haciendo maxima toda la expresion.
+~\\ En conclusion:
+$$\hat{\gamma}=y_(1)= min[y1,y2,y3,...,yn]$$
+ 
 \subsection{Punto b.} 
+~\\ Si observamos detalladamente la funcion de densidad, vemos que una funcion de una distribucion exponencial con $x=y-\gamma$
+~\\ Haciendo la sustitucion anterior tenemos:
+$$f(y,\lambda,\gamma)=\lambda e^{-\lambda(y-\gamma)}=\lambda e^{-\lambda x}$$
+~\\ Como denotamos $x=y-\gamma$, despejando $y$, nos queda $y=x+\gamma$
+~\\ \textbf{Estimacion para el promedio:}
+~\\ $E[y]=E[x+\gamma]=E[x]+E[\gamma]$ ; como x es exponencial $E[x]=\frac{1}{\lambda}$ y como $\gamma$ es constante, $E[\gamma]=\gamma$
+~\\ Entonces:
+~\\ $E[y]=\frac{1}{\lambda}+\gamma$
+~\\ Por la propiedad de la invarianza, reemplazando nuestro estimador para $\lambda$:
+$$\hat{E[y]}=\frac{1}{\frac{1}{\bar{y}-\gamma}}+\gamma=\bar{y}-\gamma+\gamma=\bar{y}$$
+~\ En conclusion:
+$$\hat{E[y]}=\bar{y}$$
+~\\ \textbf{Estimacion para la varianza:}
+~\\ $V[y]=V[x+\gamma]=V[x]+V[\gamma]$ ; como x es exponencial $V[x]=\frac{1}{\lambda^2}$ y como $\gamma$ es constante, $V[\gamma]=0$
+~\\ Entonces:
+~\\ $V[y]=\frac{1}{\lambda^2}$
+~\\ Teniendo en cuenta la propiedad de la invarianza, reemplazando nuestro estimador para $\lambda$ tenemos:
+~\\ $\hat{V[y]}=\frac{1}{(\frac{1}{\bar{y}-\gamma})^2}$, observamos que depende de $\gamma$, como el estimador para $\gamma$ es maximo verosimil, tambien se puede aplicar la propiedad de la invarianza, entonces, reemplazando tenemos:
+~\\ $$\hat{V[y]}=\frac{1}{(\frac{1}{\bar{y}-y_{(1)}})^2}=(y-y_{(1)})^2$$
+~\ En conclusion:
+$$\hat{V[y]}=(y-y_{(1)})^2$$
+~\\ \textbf{Estimacion para la mediana:}
+~\\ $Me[y]=Me[x+\gamma]=Me[x]+Me[\gamma]$ ; como $\gamma$ es constante, $Me[\gamma]=\gamma$. Por otra parte, la mediana de x debemos hallarla.
+~\\ Sabemos que la mediana esta definida como el punto que nos acumula una probabilidad de 0.5, entonces para hallarla se hace el siguiente procedimiento: 
+~\\ $Me[x]=\int \limits_{?}^{M}\lambda e^{-\lambda x}dx=0.5$  Podemos ver que el limite superior lo denotamos como M, el cual es la la mediana. y el limite inferior debemos hallarlo.
+~\\ como $x=y-\gamma$ y $0<\gamma<y<\infty$ por lo tanto $0<x<\infty$
+~\\ La integral quedaria:
+~\\ $$Me[x]=\int \limits_{0}^{M}\lambda e^{-\lambda x}dx=0.5$$
+~\\ $$=\lambda \int \limits_{0}^{M} e^{-\lambda x}dx=0.5$$ 
+~\\ Sea $u=-\lambda x$, $du=-\lambda dx$
+~\\ $$=-\frac{\lambda}{\lambda}\int \limits_{0}^{M} e^{u} du=0.5$$
+$$=-[e^{-\lambda x}-1]=0.5$$
+$$=1-e^{-\lambda x}=0.5$$
+$$=e^{-\lambda M}=0.5$$
+$$=-\lambda M=Ln(0.5)$$
+$$M=-\frac{Ln(0.5)}{\lambda}$$
+~\\ Entonces:
+$$Me[x]=-\frac{Ln(0.5)}{\lambda}$$
+~\\ Por tanto:
+$$Me[y]=Me[x]+\gamma=-\frac{Ln(0.5)}{\lambda}+\gamma$$
+~\\ Ahora, aplicando la propiedad de la invarianza. Reemplazando nuestros estimadores, nos queda:
+~\\ $$Me[y]=-\frac{Ln(0.5)}{\frac{1}{\bar{y}-y_{(1)}}}+y_{(1)}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
+~\\En conclusion:
+$$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 \subsection{Punto c.} 
+~\\ 
 
 \pagebreak\section{Situaci\'{o}n 4}
 \subsection{Punto a.}
