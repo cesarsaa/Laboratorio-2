@@ -89,21 +89,21 @@
 
 ~\\ $$f_{(x)}(x) = \frac{\exp^{-\lambda}\lambda^{X}}{X!}$$
 
-~\\ $L(x,\lambda) = \prod_{i=1}^n{}\frac{\exp^{\lambda}\lambda^{X}}{X!}$
+~\\ $L(x,\lambda) = \prod \limits_{i=1}^n{}\frac{\exp^{-\lambda}\lambda^{X}}{X!}$
 
-~\\ $L(x,\lambda) = \frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^N{X}}}{X!}$
-~\\ $Ln(L(x,\lambda)) = Ln(\frac{\exp^{\lambda n}\lambda^{\sum_{i=1}^N{X}}}{X!})$
+~\\ $L(x,\lambda) = \frac{\exp^{-\lambda n}\lambda^{\sum\limits_{i=1}^n{X}}}{ \prod \limits_{i=1}^n [x_{i}!]}$
+~\\ $Ln(L(x,\lambda)) = Ln\left(\frac{\exp^{-\lambda n}\lambda^{\sum\limits_{i=1}^n{X}}}{ \prod \limits_{i=1}^n [x_{i}!]}\right)$
 
-~\\ $L(x,\lambda) = (-\lambda n) + Ln(\lambda{\sum_{i=1}^N{x_{i}}}) - (Ln\sum_{i=1}^N{x_{i}})$
-~\\ $L(x,\lambda) = -(\lambda n) + {\sum_{i=1}^N{x_{i}}}Ln(\lambda) - (Ln\sum_{i=1}^N{x_{i}})$
+~\\ $Ln(L(x,\lambda)) = -\lambda n + Ln(\lambda^{\sum\limits_{i=1}^n{x_{i}}}) - Ln(\prod \limits_{i=1}^n [x_{i}!])$
+~\\ $Ln(L(x,\lambda)) = -\lambda n + {\sum\limits_{i=1}^n{x_{i}}}Ln(\lambda) - Ln(\prod \limits_{i=1}^n [x_{i}!])$
 
-~\\ $\frac{dL(x;\lambda)}{d\lambda} = \frac{d}{d\lambda}(-\lambda n + {\sum_{i=1}^N{x_{i}}}Ln(\lambda) - (Ln\sum_{i=1}^N{x_{i}}))$
+~\\ $\frac{\partial(Ln(L(x;\lambda)))}{\partial\lambda} = \frac{\partial}{\partial\lambda}(-\lambda n + {\sum\limits_{i=1}^n{x_{i}}}Ln(\lambda) - Ln(\prod \limits_{i=1}^n [x_{i}!]))$
 
-~\\ $L(x,\lambda) = \frac{\sum_{i=1}^N{x_{i}}}{\lambda} - n $
-~\\ $\frac{\sum_{i=1}^N{x_{i}}}{\lambda} - n = 0$
+~\\ $\frac{\partial(Ln(L(x;\lambda)))}{\partial\lambda} = \frac{\sum\limits_{i=1}^n{x_{i}}}{\lambda} - n $
+~\\ $\frac{\sum\limits_{i=1}^n{x_{i}}}{\lambda} - n = 0$
 
-~\\ $\frac{\sum_{i=1}^N{x_{i}}}{\lambda} = n $
-~\\ $\hat{\lambda} = \frac{\sum_{i=1}^N{x_{i}}}{n}$
+~\\ $\frac{\sum\limits_{i=1}^n{x_{i}}}{\lambda} = n $
+~\\ $\hat{\lambda} = \frac{\sum\limits_{i=1}^n{x_{i}}}{n}$
 
 ~\\ \textbf{Donde $\hat{\lambda}$ es un estimador m\'{a}ximo veros\'{i}mil e insesgado para la funci\'{o}n de distribuci\'{o}n poisson.} 
  
@@ -112,9 +112,9 @@
 \subsection{Punto b.}
 ~\\ En un estimador insesgado puesto que la esperanza es igual al par\'{a}metro;
 
-~\\ $E[\hat{\lambda}] = E[\frac{\sum_{i=1}^N{x_{i}}}{n}]$
-~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum_{i=1}^N{x_{i}}]$
-~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum_{i=1}^N)E[x]$
+~\\ $E[\hat{\lambda}] = E[\frac{\sum\limits_{i=1}^n{x_{i}}}{n}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}E[\sum\limits_{i=1}^n{x_{i}}]$
+~\\ $E[\hat{\lambda}] = \frac{1}{n}(\sum\limits_{i=1}^{n} E[x])$
 
 ~\\ $E[\hat{\lambda}] = E[x]$
 ~\\ $\hat{\lambda} = \bar{x}$
@@ -123,11 +123,11 @@
 
 ~\\ La varianza esta dada por: 
 
-~\\ $Var[\hat{\lambda}]= var[\frac{\sum_{i=1}^N{x_{i}}}{n}]$
-~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum_{i=1}^N{x_{i}}]$
+~\\ $Var[\hat{\lambda}]= var[\frac{\sum\limits_{i=1}^n{x_{i}}}{n}]$
+~\\ $Var[\hat{\lambda}]= \frac{1}{n^2} var[\sum\limits_{i=1}^n{x_{i}}]$
 ~\\ $Var[\hat{\lambda}]= \frac{1}{n} var[x_{i}]$
 
-~\\ $Var[x_{i}]= \frac{\lambda}{n}$
+~\\ $Var[\hat{\lambda}]= \frac{\lambda}{n}$
 
 \subsection{Punto c.}
 ~\\ Para calcular la probabilidad de que en un d\'{i}a particular se reciban m\'{a}ximo 2 quejas, es decir $P[x<2|\hat{y}=3]$ a partir de la muestra que que cuenta con una media de $\hat{y}=3$ se usa la funci\'{o}n de densidad de la distribuci\'{o}n de poisson con par\'{a}metro $\lambda=3$. 
@@ -163,7 +163,7 @@ $$\hat{\lambda}=\frac{1}{\bar{y}-\gamma}$$
 ~\\ $L(\lambda,\gamma |y1,..yn)=\lambda^n e^{-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma}$
 ~\\ Tomando todas las variables en la anterior expresi\'{o}n como constantes excepto $\gamma$ , para maximizar dicha funci\'{o}n, $\gamma$  debe ser lo mas peque\~{n}o posible, ya que con ello, el exponente $-\lambda\sum\limits_{i=1}^{n}{y_{i}}+n\lambda\gamma$ es mas peque\~{n}o y por tanto la exponencial va a ser mayor, haciendo m\'{a}xima toda la expresi\'{o}n.
 ~\\ En conclusi\'{o}n:
-$$\hat{\gamma}=y_(1)= min[y1,y2,y3,...,yn]$$
+$$\hat{\gamma}=y_(1)= Min\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace$$
  
 \subsection{Punto b.} 
 ~\\ Si observamos detalladamente la funci\'{o}n de densidad, vemos que es una funci\'{o}n de una distribuci\'{o}n exponencial con $x=y-\gamma$
@@ -240,12 +240,36 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 ~\\ $$\mu'_1=\theta + 1= \bar{y} = M'_1$$
  $$\hat{\theta}=\bar{y}-1$$
 ~\\ \textbf{ESTIMACI\'{O}N POR EL M\'{E}TODO DE M\'{A}XIMA VEROSIMILITUD:}
-~\\ $L(\theta; y_{1},y_{2},...,y_{n})=\prod \limits_{i=0}^{n}(e^{-(y-\theta)})=e^{-\sum \limits_{i=1}^n {(y_{i}-\theta)}}$
-~\\
+~\\ $L(\theta; y_{1},y_{2},...,y_{n})=\prod \limits_{i=0}^{n}(e^{-(y-\theta)})=e^{-\sum \limits_{i=1}^n {(y_{i}-\theta)}}=e^{-\sum \limits_{i=1}^n y_{i} + n\theta}$
+~\\ Aplicando logaritmo natural:
+~\\ $Ln(L(\theta; y_{1},y_{2},...,y_{n}))=-\sum \limits_{i=1}^n y_{i} + n\theta$
+~\\ Derivando parcialmente respecto a $\theta$ , nos queda:
+
+~\\ $\frac{\partial(Ln(L(\theta;y_{1},y_{2},...,y_{n})))}{\partial\theta}= n$
+~\\ Podemos ver que al derivar parcialmente con respecto a $\theta$, se nos desaparece nuestro par\'{a}metro de inter\'{e}s. Por lo cual debemos analizar nuestra funcion de verosimilitud. 
+~\\ Entonces nuestra funcion de verosimilitud es: 
+$$L(\theta; y_{1},y_{2},...,y_{n})=e^{-\sum \limits_{i=1}^n y_{i} + n\theta}$$
+~\\ Sabemos que este metodo busca maximizar dicha funcion, tomando como constante a $n$ y la expresion $\sum \limits_{i=1}^n y_{i}$, y dejando variable nuestro parametro $\theta$, podemos ver que la funcion se maximiza cuando $\theta$ toma el valor mas grande que pueda tomar en su dominio, ya que con ello $n\theta$ sera mas grande y en general, la expresion $-\sum \limits_{i=1}^n y_{i} + n\theta$ sera mayor, haciendo esto que toda la funcion de verosimilitud sea maxima. 
+~\\ Ahora, como el dominio de la funcion de densidad nos dice que $y>\theta$, $\theta$ sera maxima cuando sea igual al $Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace$
+~\\ \textbf{En conclusion:}
+$$\hat{\theta}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace=y_{(n)}$$
 
 \subsection{Punto b.}
-\subsection{Punto c.}
+~\\ Ahora veremos si los estimadores hallados en el punto anterior son insesgados:
+~\\ Estimador por el metodo de los momentos:
+~\\ $\hat{\theta_{MM}}=\bar{y}-1$
+~\\ $E[\hat{\theta_{MM}}]=E[\bar{y}-1]=E[\bar{y}]-E[1]=E[\frac{1}{n}\sum \limits_{i=1}^{n} y_{i}]-1=\frac{1}{n} E[\sum \limits_{i=1}^{n} y_{i}]-1=\frac{1}{n}(n(1+\theta))-1=1+\theta-1=\theta$
+~\\ \textbf{El estimador $\hat{\theta_{MM}}=\bar{y}-1$ es insesgado, ya que  $E[\hat{\theta_{MM}}]=\theta$}
 
+~\\ Estimador por el metodo de maxima verosimilitud:
+~\\ $\hat{\theta_{MV}}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace$
+~\\ $E[\hat{\theta_{MV}}]=E[Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace]=E[y_{(n)}]=\theta+1$
+~\\ Entonces nuestro estimador  $\hat{\theta_{MV}}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace$ no es insesgado, ya que $E[\hat{\theta_{MV}}]\neq \theta$
+~\\ Entonces, aplicando una transformacion a nuestro estimador para que este sea insesgado, tenemos:
+
+~\\ $$\hat{\theta^*_{MV}}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace - 1 = y_{n}-1$$
+~\\ $$E[\hat{\theta^*_{MV}}]=E[y_{(n)}-1]=E[y_{(n)}]-E[1]=\theta+1-1=\theta$$
+~\\ \textbf{En conclusion, el estimador $\hat{\theta^*_{MV}}=Max\left\lbrace{y_{1},y_{2},y_{3},...,y_{n}}\right\rbrace - 1 = y_{n}-1$ es insesgado para el parametro $\theta$, ya que, $\hat{\theta^*_{MV}}=\theta$ } 
 \pagebreak\section{Situaci\'{o}n 5}
 \subsection{Punto a.}
 ~\\ $$f(x;\theta) = \frac{2\theta^2}{x^3} ; \theta<x<\infty $$
@@ -270,19 +294,19 @@ $$\hat{Me[y]}=y_{(1)}-(\bar{y}-y_{(1)})Ln(0.5)$$
 
 ~\\ \textbf{Para $\theta$ :}
 
-~\\ $L(y;\theta) = \prod_{i=1}^n{}(\frac{1}{2\theta +2})$
+~\\ $L(y;\theta) = \prod\limits_{i=1}^n{}(\frac{1}{2\theta +2})$
 ~\\ $L(y;\theta) = (\frac{1}{2\theta +2})^{n}$
 ~\\ $Ln(L(y;\theta)) = Ln((\frac{1}{2\theta +2})^{n})$
-~\\ $L(y;\theta) = n[Ln((\frac{1}{2\theta +2})]$
-~\\ $L(y;\theta) = n[Ln(1)-Ln({2\theta+2})]$
-~\\ $L(y;\theta) = n[-Ln({2\theta+2})]$
-~\\ $\frac{dL(y;\theta)}{\theta} = \frac{d}{\theta}(n[-Ln({2\theta+2}))]$
+~\\ $Ln(L(y;\theta)) = n[Ln(\frac{1}{2\theta +2})]$
+~\\ $Ln(L(y;\theta)) = n[Ln(1)-Ln({2\theta+2})]$
+~\\ $Ln(L(y;\theta)) = n[-Ln({2\theta+2})]$
+~\\ $\frac{\partial (Ln(L(y;\theta)))}{\partial\theta} = \frac{\partial}{\partial\theta}(n[-Ln({2\theta+2})])$
 
 ~\\ $\hat{\theta} = \frac{n}{\theta+1}$
 
 ~\\ Donde el par\'{a}metro es el limite superior de la variaci\'{o}n de la funci\'{o}n de distribuci\'{o}n. 
 
-~\\ $\therefore \hat{\theta} = Maximo = [Y_{1}, Y_{2}, Y_{3},...,Y_{n}]$ 
+~\\ $\therefore \hat{\theta} = Maximo \left\lbrace{y_{1}, y_{2}, y_{3},...,y_{n}}\right\rbrace$ 
 
 ~\\ \textbf{Para $\sigma^{2}$ :}
 ~\\ Como sabemos que $f(y)$ es uniforme con $a=-1$ y $b=2\theta+1$, tenemos que la varianza es:
